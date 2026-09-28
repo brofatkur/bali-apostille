@@ -9,7 +9,7 @@ Landing page B2B berkonversi tinggi (*high-conversion B2B landing page*) yang di
 - **Live Website:** [https://bali-apostille.vercel.app](https://bali-apostille.vercel.app)
 - **Nama Layanan:** Bali Apostille (B2B Sworn Translation & Legalization Desk)
 - **Badan Hukum:** PT Sinar Heksa Edukasi
-- **Jaringan Cabang Fisik Bali:** Tuban (Airport Hub), Sanur (Diplomatic & Expat Hub), Seminyak (Hospitality & PMA Hub)
+- **Jaringan Cabang Fisik:** Jakarta (Paseban, Senen), Bali (Tuban, Kuta), dan Malang (Blimbing, Jawa Timur)
 - **Jam Operasional Kantor Fisik:** Buka Setiap Hari, 08.00 – 19.00 WITA
 - **Jam Pelayanan CS & WhatsApp:** Senin – Sabtu, 09.00 – 17.00 WITA
 - **Email Resmi B2B:** [info@b2bsworntranslator.com](mailto:info@b2bsworntranslator.com)
@@ -35,7 +35,7 @@ Landing page B2B berkonversi tinggi (*high-conversion B2B landing page*) yang di
    - Perlindungan data dengan penandatanganan Perjanjian Kerahasiaan (NDA).
    - Penerbitan Faktur Pajak PPN resmi dan Term of Payment (TOP).
    - Dedicated B2B Account Manager.
-   - Layanan antar-jemput berkas fisik di Bali (Tuban, Sanur, Seminyak, Denpasar) & Jakarta serta kurir internasional DHL Express.
+   - Layanan antar-jemput berkas fisik di area kantor cabang (Jakarta, Bali, Malang) serta kurir internasional DHL Express.
 5. **Interactive FAQ Accordion**:
    - Menjawab pertanyaan regulasi, perbedaan Apostille vs Legalisasi Kedutaan, legalitas cap penerjemah tersumpah, dan keamanan berkas.
 6. **Mobile First & Sticky Conversion Bars**:

@@ -157,7 +157,11 @@ function updateB2BCalculator() {
   if (location === 'international') {
     noteText += ' Ditambah estimasi 3–5 hari pengiriman internasional via DHL Express.';
   } else if (location === 'bali') {
-    noteText += ' Free penjemputan fisik berkas di Tuban, Sanur, Seminyak, & Denpasar.';
+    noteText += ' Free penjemputan fisik berkas di area Bali (Tuban / Denpasar).';
+  } else if (location === 'jakarta') {
+    noteText += ' Free penjemputan fisik berkas di wilayah Jakarta Pusat & sekitarnya.';
+  } else if (location === 'malang') {
+    noteText += ' Free penjemputan fisik berkas di wilayah Malang & Jawa Timur.';
   }
 
   timelineDisplay.textContent = timelineText;

@@ -88,7 +88,7 @@
           <span class="hidden md:inline text-slate-600">|</span>
           <div class="flex items-center gap-1.5 text-slate-300">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent-400"></i>
-            <span>Cabang Bali: <strong>Tuban, Sanur, & Seminyak</strong></span>
+            <span>Kantor Cabang: <strong>Jakarta, Bali (Tuban), & Malang</strong></span>
           </div>
         </div>
 
@@ -236,7 +236,7 @@
               <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i>
               </div>
-              <span><strong>Free Pickup & Delivery</strong>: Area Tuban, Sanur, Seminyak, & ekspedisi DHL.</span>
+              <span><strong>Free Pickup & Delivery</strong>: Area Jakarta, Bali (Tuban/Denpasar), Malang, & ekspedisi DHL.</span>
             </div>
           </div>
 
@@ -832,9 +832,10 @@
               <div>
                 <label class="block text-xs font-semibold text-slate-300 mb-2">Lokasi Serah Terima:</label>
                 <select id="calc-location" onchange="updateB2BCalculator()" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-accent-400">
-                  <option value="bali">Area Bali (Tuban, Sanur, Seminyak, Denpasar)</option>
-                  <option value="jakarta">Area Jakarta</option>
-                  <option value="luar_bali">Luar Bali / Seluruh Indonesia</option>
+                  <option value="bali">Area Bali (Tuban / Denpasar)</option>
+                  <option value="jakarta">Area Jakarta Pusat & Sekitarnya</option>
+                  <option value="malang">Area Malang & Jawa Timur</option>
+                  <option value="luar_bali">Luar Wilayah Cabang / Se-Indonesia</option>
                   <option value="international">Pengiriman Internasional (DHL)</option>
                 </select>
               </div>
@@ -873,7 +874,7 @@
                 </div>
                 <div class="flex items-center gap-2">
                   <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                  <span>Free pick-up dokumen di wilayah Denpasar/Sanur/Seminyak/Tuban</span>
+                  <span>Free pick-up dokumen di area cabang (Jakarta, Bali, Malang)</span>
                 </div>
               </div>
             </div>
@@ -953,9 +954,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center mb-6">
             <i data-lucide="map-pin" class="w-6 h-6 text-accent-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Jaringan 3 Kantor Cabang di Bali</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Jaringan Kantor Cabang: Jakarta, Bali & Malang</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
-            Kantor fisik kami hadir di 3 lokasi strategis Pulau Dewata: <strong>Tuban</strong> (dekat Bandara Ngurah Rai), <strong>Sanur</strong>, dan <strong>Seminyak</strong>, didukung operasional representatif di Jakarta Pusat untuk percepatan kementerian.
+            Kantor fisik kami hadir di kota strategis: <strong>Jakarta Pusat</strong> (Paseban, Senen), <strong>Bali</strong> (Tuban, Kuta), dan <strong>Malang</strong> (Blimbing, Jawa Timur), mempermudah koordinasi tatap muka, penyerahan berkas fisik asli, dan pengesahan kementerian.
           </p>
         </div>
 
@@ -1087,12 +1088,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Kehadiran Fisik & Lokasi Kantor</span>
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Jaringan Kantor Cabang Kami</span>
         <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
-          Cabang Strategis Bali & Jam Pelayanan
+          Kantor Cabang Jakarta, Bali & Malang
         </h2>
         <p class="text-base text-slate-600 mt-3">
-          Kami memiliki kantor fisik resmi di Bali dan dukungan perwakilan di Jakarta untuk memudahkan penyerahan berkas fisik asli, konsultasi tatap muka, dan penjemputan dokumen korporat.
+          Kami memiliki kantor fisik resmi di <strong>Jakarta</strong>, <strong>Bali (Tuban)</strong>, dan <strong>Malang</strong> untuk memudahkan penyerahan berkas fisik asli, konsultasi tatap muka, dan penjemputan dokumen korporat.
         </p>
       </div>
 
@@ -1147,63 +1148,87 @@
 
       </div>
 
-      <!-- 3 Branch Location Cards in Bali -->
+      <!-- 3 Branch Location Cards: Jakarta, Bali, Malang -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Cabang Tuban -->
-        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-7 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center font-bold">
-              <i data-lucide="plane" class="w-5 h-5"></i>
+        <!-- Cabang Jakarta -->
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-7 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-900 flex items-center justify-center font-bold">
+                <i data-lucide="building" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-brand-800">Pusat Kementerian</span>
             </div>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-brand-800">Airport Hub</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Jakarta</h3>
+            <p class="text-xs text-brand-700 font-semibold mb-3">Jakarta Pusat — Akses Cepat Kemenkumham & Kemenlu</p>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Jl. H. Murtadho XVI, No A.589, Kel. Paseban, Kec. Senen, Jakarta Pusat 10440.<br>
+              <span class="text-slate-500 mt-2 block font-medium">Email: info@b2bsworntranslator.com</span>
+              <span class="text-slate-500 block font-medium">WhatsApp: +62 817-326-167 / +62 817-322-287</span>
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-1">Cabang Tuban (Kuta)</h3>
-          <p class="text-xs text-brand-700 font-semibold mb-3">Dekat Bandara Internasional I Gusti Ngurah Rai</p>
-          <p class="text-xs text-slate-600 leading-relaxed mb-4">
-            Lokasi strategis ideal bagi eksekutif yang memerlukan serah-terima dokumen kilat sebelum penerbangan, atau koordinasi kurir kargo udara express.
-          </p>
           <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
-            <span>Operasional: <strong>08.00 - 19.00 WITA</strong></span>
-            <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20jadwalkan%20drop%20dokumen%20di%20Cabang%20Tuban." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Jadwalkan Drop ➔</a>
+            <a href="https://g.co/kgs/gG9d6S6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-slate-700 hover:text-brand-700">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent-500"></i>
+              <span>Google Maps</span>
+            </a>
+            <a href="https://wa.me/62817326167?text=Halo%20B2B%20Sworn%20Translator%20Jakarta%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
           </div>
         </div>
 
-        <!-- Cabang Sanur -->
-        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-7 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-              <i data-lucide="compass" class="w-5 h-5"></i>
-            </div>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900">Diplomatic & Expat Hub</span>
+        <!-- Cabang Bali (Tuban) -->
+        <div class="rounded-2xl border-2 border-brand-500/80 bg-white p-7 hover:border-brand-600 shadow-md hover:shadow-xl transition-all flex flex-col justify-between relative">
+          <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-brand-800 text-white text-[10px] font-extrabold uppercase tracking-widest shadow-xs">
+            Kantor Bali
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-1">Cabang Sanur</h3>
-          <p class="text-xs text-amber-700 font-semibold mb-3">Area Bisnis & Residensial Bali Timur</p>
-          <p class="text-xs text-slate-600 leading-relaxed mb-4">
-            Melayani konsulat kehormatan, ekspatriat jangka panjang, notaris rekanan, serta institusi pendidikan internasional di wilayah Sanur dan Denpasar Selatan.
-          </p>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center font-bold">
+                <i data-lucide="plane" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Airport Hub</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Bali</h3>
+            <p class="text-xs text-brand-700 font-semibold mb-3">Tuban, Kuta — Dekat Bandara Ngurah Rai</p>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Jl. Dewi Sartika No. 2, Desa/Kelurahan Tuban, Kec. Kuta, Kab. Badung, Provinsi Bali.<br>
+              <span class="text-slate-500 mt-2 block font-medium">Email: info@b2bsworntranslator.com</span>
+              <span class="text-slate-500 block font-medium">WhatsApp: +62 817-341-666 / +62 817-322-287</span>
+            </p>
+          </div>
           <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
-            <span>Operasional: <strong>08.00 - 19.00 WITA</strong></span>
-            <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20jadwalkan%20drop%20dokumen%20di%20Cabang%20Sanur." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Jadwalkan Drop ➔</a>
+            <a href="https://share.google/8XPkV8nYPGhQ56ERS" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-slate-700 hover:text-brand-700">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent-500"></i>
+              <span>Google Maps</span>
+            </a>
+            <a href="https://wa.me/62817341666?text=Halo%20B2B%20Sworn%20Translator%20Bali%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
           </div>
         </div>
 
-        <!-- Cabang Seminyak -->
-        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-7 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center font-bold">
-              <i data-lucide="hotel" class="w-5 h-5"></i>
+        <!-- Cabang Malang -->
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-7 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                <i data-lucide="landmark" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900">Jawa Timur Hub</span>
             </div>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-900">Hospitality & PMA Hub</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Malang</h3>
+            <p class="text-xs text-amber-700 font-semibold mb-3">Kota Malang — Layanan Regional Jawa Timur</p>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Jalan Terusan Batubara Gg. V No.21, RT.05/RW.09, Desa Pandan Wangi, Kec. Blimbing, Kota Malang, Jawa Timur 85124.<br>
+              <span class="text-slate-500 mt-2 block font-medium">Email: info@b2bsworntranslator.com</span>
+              <span class="text-slate-500 block font-medium">WhatsApp: +62 817-322-287</span>
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-1">Cabang Seminyak</h3>
-          <p class="text-xs text-purple-700 font-semibold mb-3">Pusat Investasi & Hospitality Bali Selatan</p>
-          <p class="text-xs text-slate-600 leading-relaxed mb-4">
-            Dikhususkan untuk kebutuhan legalitas grup perhotelan, PMA investasi properti & restoran, serta manajemen talenta internasional di area Canggu, Seminyak, & Kuta Utara.
-          </p>
           <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
-            <span>Operasional: <strong>08.00 - 19.00 WITA</strong></span>
-            <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20jadwalkan%20drop%20dokumen%20di%20Cabang%20Seminyak." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Jadwalkan Drop ➔</a>
+            <a href="https://share.google/TpYWACMzGF3khrVFu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-slate-700 hover:text-brand-700">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent-500"></i>
+              <span>Google Maps</span>
+            </a>
+            <a href="https://wa.me/62817322287?text=Halo%20B2B%20Sworn%20Translator%20Malang%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
           </div>
         </div>
 
@@ -1266,7 +1291,7 @@
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
             </div>
             <p class="text-sm text-slate-700 italic leading-relaxed mb-6">
-              "Sebagai grup perhotelan PMA di Seminyak, dokumen direksi dan izin kerja ekspatriat kami sangat sensitif. Jaminan NDA dan sistem faktur pajak dari PT Sinar Heksa Edukasi sangat memudahkan tim finance dan legal internal kami. Layanan antar jemput dokumen sangat membantu."
+              "Sebagai grup perhotelan PMA di Bali, dokumen direksi dan izin kerja ekspatriat kami sangat sensitif. Jaminan NDA dan sistem faktur pajak dari PT Sinar Heksa Edukasi sangat memudahkan tim finance dan legal internal kami. Layanan antar jemput dokumen sangat membantu."
             </p>
           </div>
           <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
@@ -1291,7 +1316,7 @@
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
             </div>
             <p class="text-sm text-slate-700 italic leading-relaxed mb-6">
-              "Penyelesaian legalisasi dokumen tender ke Kedutaan Qatar di Jakarta ditangani dengan rapi tanpa kami harus terbang ke ibu kota. Dokumen hasil stempel kementerian dan kedutaan diverifikasi dan diantar langsung ke kantor kami di Sanur. Efisiensi luar biasa!"
+              "Penyelesaian legalisasi dokumen tender ke Kedutaan Qatar di Jakarta ditangani dengan rapi tanpa kami harus terbang ke ibu kota. Dokumen hasil stempel kementerian dan kedutaan diverifikasi dan diantar langsung ke kantor kami di Bali. Efisiensi luar biasa!"
             </p>
           </div>
           <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
@@ -1381,7 +1406,7 @@
               Untuk proses <strong>Penerjemahan Tersumpah (Sworn Translation)</strong>, kami hanya membutuhkan softcopy scan resolusi tinggi (PDF) yang jelas.
             </p>
             <p class="mt-2">
-              Untuk proses <strong>Apostille Kemenkumham</strong>, verifikasi awal dapat dilakukan via scan dokumen. Namun, untuk pencetakan sertifikat fisik stiker Apostille ber-barcode atau legalisasi kedutaan, dokumen asli atau salinan legalisir notaris terkadang diwajibkan sesuai regulasi otoritas. Tim kami menyediakan penjemputan berkas fisik gratis di area Tuban, Sanur, Seminyak, Denpasar, dan Jakarta.
+              Untuk proses <strong>Apostille Kemenkumham</strong>, verifikasi awal dapat dilakukan via scan dokumen. Namun, untuk pencetakan sertifikat fisik stiker Apostille ber-barcode atau legalisasi kedutaan, dokumen asli atau salinan legalisir notaris terkadang diwajibkan sesuai regulasi otoritas. Tim kami menyediakan penjemputan berkas fisik gratis di area kantor cabang kami di Jakarta, Bali (Tuban/Denpasar), dan Malang.
             </p>
           </div>
         </div>
@@ -1499,22 +1524,22 @@
 
         <!-- Col 4: Jaringan Kantor Cabang -->
         <div>
-          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Kantor Cabang Bali</h4>
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Kantor Cabang Kami</h4>
           <ul class="space-y-2.5">
             <li>
-              <strong class="text-slate-300 block">Cabang Tuban:</strong>
-              <span>Area Bandara I Gusti Ngurah Rai</span>
+              <strong class="text-slate-300 block">Cabang Jakarta:</strong>
+              <span>Jl. H. Murtadho XVI No A.589, Senen, Jakarta Pusat</span>
             </li>
             <li>
-              <strong class="text-slate-300 block">Cabang Sanur:</strong>
-              <span>Kawasan Bisnis & Residensial Bali Timur</span>
+              <strong class="text-slate-300 block">Cabang Bali (Tuban):</strong>
+              <span>Jl. Dewi Sartika No. 2, Kuta, Bali</span>
             </li>
             <li>
-              <strong class="text-slate-300 block">Cabang Seminyak:</strong>
-              <span>Kawasan Hospitality & PMA Bali Selatan</span>
+              <strong class="text-slate-300 block">Cabang Malang:</strong>
+              <span>Jl. Terusan Batubara Gg. V No.21, Blimbing, Malang</span>
             </li>
             <li class="pt-1">
-              <span class="text-emerald-400 font-semibold">Kantor Fisik: Buka Setiap Hari (08.00 - 19.00 WITA)</span>
+              <span class="text-emerald-400 font-semibold">Kantor Fisik Buka Setiap Hari (08.00 - 19.00 WITA)</span>
             </li>
           </ul>
         </div>
