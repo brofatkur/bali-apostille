@@ -9,7 +9,7 @@ Landing page B2B berkonversi tinggi (*high-conversion B2B landing page*) yang di
 - **Live Website:** [https://bali-apostille.vercel.app](https://bali-apostille.vercel.app)
 - **Nama Layanan:** Bali Apostille (B2B Sworn Translation & Legalization Desk)
 - **Badan Hukum:** PT Sinar Heksa Edukasi
-- **Jaringan Cabang Fisik:** Jakarta (Paseban, Senen), Bali (Tuban, Kuta), dan Malang (Blimbing, Jawa Timur)
+- **Jaringan Cabang Fisik:** Jakarta (Paseban, Senen), Bali (Kuta, Badung), dan Malang (Blimbing, Jawa Timur)
 - **Jam Operasional Kantor Fisik:** Buka Setiap Hari, 08.00 – 19.00 WITA
 - **Jam Pelayanan CS & WhatsApp:** Senin – Sabtu, 09.00 – 17.00 WITA
 - **Email Resmi B2B:** [info@b2bsworntranslator.com](mailto:info@b2bsworntranslator.com)
@@ -28,9 +28,9 @@ Landing page B2B berkonversi tinggi (*high-conversion B2B landing page*) yang di
    - *Legalisasi Notaris Dokumen Perusahaan* (Waarmerking, Salinan Sesuai Asli).
    - *Dokumen Ekspatriat & TKA* (Ijazah, SKCK Mabes Polri, Akta Nikah/Buku Nikah, SKBM).
    - *Express Priority Track* (Penyelesaian Kilat 1–2 Hari Kerja).
-3. **Kalkulator Estimasi Biaya & Timeline Interaktif**:
-   - Memilih kombinasi layanan, bahasa, jumlah berkas, dan lokasi pengiriman.
-   - Menghasilkan proyeksi timeline realistis dan tombol kirim penawaran instan ke WhatsApp.
+3. **Konsultasi & Estimasi Harga B2B via WhatsApp**:
+   - Menghubungkan calon klien korporat langsung ke Account Executive via WhatsApp Hotline.
+   - Analisis dokumen gratis (*Free preliminary review*) dan penerbitan *Official Quotation PDF* dalam 15-30 menit.
 4. **B2B Trust & Enterprise Compliance**:
    - Perlindungan data dengan penandatanganan Perjanjian Kerahasiaan (NDA).
    - Penerbitan Faktur Pajak PPN resmi dan Term of Payment (TOP).
@@ -59,6 +59,6 @@ Buka peramban di `http://localhost:8080`.
 bali-apostille/
 ├── index.html        # Halaman utama landing page B2B lengkap
 ├── styles.css        # Custom styling, accordion, micro-interactions
-├── script.js         # Logika interaktif form, kalkulator, icon Lucide
+├── script.js         # Logika interaktif form, accordion FAQ, icon Lucide
 └── README.md         # Dokumentasi resmi proyek
 ```

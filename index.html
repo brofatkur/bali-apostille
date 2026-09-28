@@ -80,7 +80,7 @@
           <span class="hidden sm:inline text-slate-700">|</span>
           <div class="hidden sm:flex items-center gap-1.5 text-slate-300">
             <i data-lucide="map-pin" class="w-3 h-3 text-accent-400 shrink-0"></i>
-            <span>Cabang: <strong>Jakarta • Bali (Tuban) • Malang</strong></span>
+            <span>Cabang: <strong>Jakarta • Bali • Malang</strong></span>
           </div>
           <span class="hidden md:inline text-slate-700">|</span>
           <div class="hidden md:flex items-center gap-1.5 text-slate-400">
@@ -135,12 +135,8 @@
         </div>
 
         <!-- Action CTA -->
-        <div class="hidden sm:flex items-center gap-3">
-          <a href="#kalkulator" class="px-3.5 py-2 rounded-lg text-xs font-bold text-slate-700 hover:text-brand-900 hover:bg-slate-100 transition-all flex items-center gap-1.5 whitespace-nowrap">
-            <i data-lucide="calculator" class="w-3.5 h-3.5 text-slate-500"></i>
-            <span>Simulasi Biaya</span>
-          </a>
-          <a href="https://wa.me/62817322287?text=Halo%20Tim%20Bali%20Apostille%2C%20kami%20memerlukan%20penawaran%20resmi%20B2B%20untuk%20penerjemahan%20tersumpah%20dan%20apostille." target="_blank" class="px-4.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-brand-900 hover:bg-brand-800 shadow-sm hover:shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
+        <div class="hidden sm:flex items-center">
+          <a href="https://wa.me/62817322287?text=Halo%20Tim%20Bali%20Apostille%2C%20kami%20memerlukan%20penawaran%20resmi%20B2B%20untuk%20penerjemahan%20tersumpah%20dan%20apostille." target="_blank" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-brand-900 hover:bg-brand-800 border border-brand-800 hover:border-brand-700 shadow-xs hover:shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
             <i data-lucide="message-square" class="w-4 h-4 text-accent-400"></i>
             <span>Penawaran B2B</span>
           </a>
@@ -226,7 +222,7 @@
               <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i>
               </div>
-              <span><strong>Free Pickup & Delivery</strong>: Area Jakarta, Bali (Tuban/Denpasar), Malang, & ekspedisi DHL.</span>
+              <span><strong>Free Pickup & Delivery</strong>: Area Jakarta, Bali, Malang, & ekspedisi DHL.</span>
             </div>
           </div>
 
@@ -761,125 +757,126 @@
   </section>
 
   <!-- ============================================================== -->
-  <!-- 7. INTERACTIVE B2B ESTIMATE & TIMELINE CALCULATOR -->
   <!-- ============================================================== -->
-  <section id="kalkulator" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+  <!-- 7. KONSULTASI & ESTIMASI HARGA B2B VIA WHATSAPP -->
+  <!-- ============================================================== -->
+  <section id="penawaran" class="py-20 bg-slate-900 text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-accent-400 bg-accent-500/10 px-3 py-1 rounded-full border border-accent-500/30">Simulasi Instan</span>
+        <span class="text-xs font-extrabold uppercase tracking-widest text-accent-400 bg-accent-500/10 px-3.5 py-1.5 rounded-full border border-accent-500/30">Layanan Korporasi & B2B Desk</span>
         <h2 class="text-3xl font-extrabold text-white mt-3 sm:text-4xl">
-          Kalkulator Estimasi Layanan B2B
+          Tanya Estimasi Harga & Konsultasi Resmi B2B
         </h2>
-        <p class="text-sm text-slate-300 mt-2">
-          Pilih spesifikasi kebutuhan dokumen Anda untuk melihat proyeksi timeline pengerjaan dan mengirimkan permohonan penawaran formal langsung ke tim Account Executive kami.
+        <p class="text-sm text-slate-300 mt-2.5 leading-relaxed">
+          Konsultasikan kebutuhan legalisasi apostille & penerjemahan tersumpah korporasi Anda langsung dengan Account Executive kami. Dapatkan penawaran resmi (Official Quotation) dalam 15–30 menit.
         </p>
       </div>
 
       <div class="bg-slate-800/90 backdrop-blur-md rounded-2xl p-6 sm:p-10 border border-slate-700 shadow-2xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <!-- Controls -->
-          <div class="space-y-5">
-            
-            <!-- Layanan -->
+          <!-- Information Column -->
+          <div class="lg:col-span-7 space-y-6">
             <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-2">Pilih Layanan Utama:</label>
-              <select id="calc-service" onchange="updateB2BCalculator()" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-accent-400">
-                <option value="apostille_standard">Apostille Kemenkumham RI — Standard B2B</option>
-                <option value="apostille_priority">Apostille Kemenkumham RI — Priority Express</option>
-                <option value="sworn_translation">Penerjemahan Tersumpah (Sworn Translation)</option>
-                <option value="bundle_complete">Paket Lengkap (Penerjemah Tersumpah + Apostille)</option>
-                <option value="embassy_legalization">Legalisasi Kemenkumham, Kemenlu & Kedutaan (Non-Hague)</option>
-                <option value="notarization_only">Legalisasi Notaris Dokumen Korporasi</option>
-              </select>
-            </div>
-
-            <!-- Pasangan Bahasa -->
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-2">Bahasa yang Dibutuhkan:</label>
-              <select id="calc-language" onchange="updateB2BCalculator()" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-accent-400">
-                <option value="id_en">Indonesia ➔ Inggris (atau sebaliknya)</option>
-                <option value="id_cn">Indonesia / Inggris ➔ Mandarin (Tiongkok/Taiwan)</option>
-                <option value="id_jp">Indonesia / Inggris ➔ Jepang</option>
-                <option value="id_de">Indonesia / Inggris ➔ Jerman</option>
-                <option value="id_nl">Indonesia / Inggris ➔ Belanda</option>
-                <option value="id_fr">Indonesia / Inggris ➔ Prancis</option>
-                <option value="id_ar">Indonesia / Inggris ➔ Arab</option>
-                <option value="other_lang">Bahasa Internasional Lainnya</option>
-                <option value="none_lang">Tidak Perlu Penerjemahan (Hanya Legalisasi)</option>
-              </select>
-            </div>
-
-            <!-- Jumlah Dokumen / Halaman -->
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-2">Jumlah Dokumen:</label>
-                <input type="number" id="calc-doc-count" min="1" max="100" value="1" onchange="updateB2BCalculator()" onkeyup="updateB2BCalculator()" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-accent-400">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-2">Lokasi Serah Terima:</label>
-                <select id="calc-location" onchange="updateB2BCalculator()" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-accent-400">
-                  <option value="bali">Area Bali (Tuban / Denpasar)</option>
-                  <option value="jakarta">Area Jakarta Pusat & Sekitarnya</option>
-                  <option value="malang">Area Malang & Jawa Timur</option>
-                  <option value="luar_bali">Luar Wilayah Cabang / Se-Indonesia</option>
-                  <option value="international">Pengiriman Internasional (DHL)</option>
-                </select>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Dynamic Result Box -->
-          <div class="bg-gradient-to-br from-slate-900 to-brand-950 rounded-2xl p-6 border border-slate-700 flex flex-col justify-between h-full">
-            <div>
-              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                <span class="text-xs uppercase font-extrabold tracking-wider text-accent-400">Proyeksi Estimasi B2B</span>
-                <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold">Tersedia Faktur Pajak</span>
-              </div>
-
-              <!-- Estimated Timeline Display -->
-              <div class="my-5">
-                <span class="text-xs text-slate-400 block mb-1">Estimasi Timeline Pengerjaan:</span>
-                <div id="calc-timeline-display" class="text-2xl sm:text-3xl font-extrabold text-white">
-                  3 – 5 Hari Kerja
-                </div>
-                <p id="calc-note-display" class="text-xs text-slate-400 mt-2 leading-relaxed">
-                  *Termasuk verifikasi awal draft dokumen & koordinasi penyerahan berkas fisik di Bali / Jakarta.
-                </p>
-              </div>
-
-              <!-- Service Inclusions -->
-              <div class="space-y-2 py-3 border-t border-slate-800 text-xs text-slate-300">
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                  <span>Pemeriksaan awal kesesuaian berkas 100% Bebas Biaya</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                  <span>Pemberian surat jaminan kerahasiaan berkas (NDA)</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                  <span>Free pick-up dokumen di area cabang (Jakarta, Bali, Malang)</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Forward Quote to WA Button -->
-            <div class="pt-5 mt-4 border-t border-slate-800">
-              <button type="button" onclick="sendCalculatedQuoteToWhatsApp()" class="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-brand-950 bg-gradient-to-r from-accent-400 to-amber-300 hover:from-accent-500 hover:to-amber-400 shadow-lg shadow-accent-500/20 transition-all flex items-center justify-center gap-2">
-                <i data-lucide="send" class="w-4 h-4"></i>
-                <span>Ajukan Penawaran Resmi via WhatsApp</span>
-              </button>
-              <p class="text-[10px] text-center text-slate-500 mt-2">
-                Hubungkan langsung dengan Hotline Corporate Desk: <strong>+62 817-322-287</strong>
+              <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-400"></span>
+                <span>Prosedur Cepat Permintaan Penawaran Harga</span>
+              </h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Kami memahami pentingnya kecepatan dan kepastian biaya pada level korporasi. Tanpa perlu hitung manual, Anda dapat langsung menanyakan estimasi akurat via WhatsApp Corporate Desk:
               </p>
             </div>
 
+            <div class="space-y-3.5">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</div>
+                <div>
+                  <h4 class="text-xs font-bold text-white">Kirimkan Informasi atau Dokumen Draft</h4>
+                  <p class="text-[11px] text-slate-400 leading-relaxed">Sampaikan jenis dokumen, bahasa target, negara tujuan pengesahan, dan estimasi tenggat waktu Anda.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
+                <div>
+                  <h4 class="text-xs font-bold text-white">Review & Verifikasi Awal Bebas Biaya (100% Free)</h4>
+                  <p class="text-[11px] text-slate-400 leading-relaxed">Tim legal spesialis kami memeriksa kelayakan tanda tangan pejabat, legalisir notaris, dan kesesuaian sistem AHU Kemenkumham RI.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</div>
+                <div>
+                  <h4 class="text-xs font-bold text-white">Penerbitan Surat Penawaran Resmi (Quotation PDF)</h4>
+                  <p class="text-[11px] text-slate-400 leading-relaxed">Menerima penawaran resmi ber-kop surat PT Sinar Heksa Edukasi lengkap dengan timeline, klausul NDA, dan opsi Faktur Pajak.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-700/60 flex flex-wrap gap-4 text-xs text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Tersedia Jaminan NDA</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="receipt" class="w-4 h-4 text-emerald-400"></i>
+                <span>Faktur Pajak & Invoice PT</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="truck" class="w-4 h-4 text-emerald-400"></i>
+                <span>Free Pick-Up (Jakarta, Bali, Malang)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct CTA Card -->
+          <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-brand-950 rounded-2xl p-6 sm:p-7 border border-slate-700 shadow-xl flex flex-col justify-between text-center sm:text-left">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <span class="text-[11px] uppercase font-extrabold tracking-wider text-accent-400">Corporate Account Desk</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold">Respon Cepat</span>
+              </div>
+
+              <div class="my-5">
+                <h4 class="text-xl font-bold text-white mb-1.5">Tanya Estimasi Harga</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Terhubung langsung dengan Account Executive kami melalui WhatsApp untuk konsultasi cepat, penawaran harga khusus volume korporasi, atau penjemputan berkas fisik.
+                </p>
+              </div>
+
+              <div class="bg-slate-800/80 rounded-xl p-3.5 mb-5 border border-slate-700/60 text-left space-y-2">
+                <div class="text-[11px] text-slate-400">Jam Pelayanan CS & WhatsApp:</div>
+                <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-accent-400"></i>
+                  <span>Senin – Sabtu, 09.00 - 17.00 WITA</span>
+                </div>
+                <div class="text-[11px] text-slate-400 pt-1.5 border-t border-slate-700/50">Jam Operasional Kantor Cabang:</div>
+                <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                  <i data-lucide="building-2" class="w-3.5 h-3.5 text-accent-400"></i>
+                  <span>Setiap Hari, 08.00 - 19.00 WITA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5">
+              <a href="https://wa.me/62817322287?text=Halo%20Tim%20Bali%20Apostille%2C%20kami%20ingin%20konsultasi%20dan%20menanyakan%20estimasi%20harga%20layanan%20B2B." target="_blank" class="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-brand-950 bg-gradient-to-r from-accent-400 to-amber-300 hover:from-accent-500 hover:to-amber-400 shadow-lg shadow-accent-500/20 transition-all flex items-center justify-center gap-2 group">
+                <i data-lucide="message-circle" class="w-4 h-4 text-brand-950"></i>
+                <span>Tanya Estimasi via WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </a>
+
+              <a href="mailto:info@b2bsworntranslator.com?subject=Permintaan%20Estimasi%20Harga%20B2B%20-%20Bali%20Apostille" class="w-full py-2.5 px-4 rounded-xl font-semibold text-xs text-slate-300 bg-slate-800 hover:bg-slate-700 hover:text-white transition-all flex items-center justify-center gap-2 border border-slate-700">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-400"></i>
+                <span>Kirim Dokumen via Email</span>
+              </a>
+            </div>
+
+            <p class="text-[10px] text-center text-slate-500 mt-4">
+              Hotline Corporate: <strong class="text-slate-300">+62 817-322-287</strong>
+            </p>
           </div>
 
         </div>
@@ -946,7 +943,7 @@
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-3">Jaringan Kantor Cabang: Jakarta, Bali & Malang</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
-            Kantor fisik kami hadir di kota strategis: <strong>Jakarta Pusat</strong> (Paseban, Senen), <strong>Bali</strong> (Tuban, Kuta), dan <strong>Malang</strong> (Blimbing, Jawa Timur), mempermudah koordinasi tatap muka, penyerahan berkas fisik asli, dan pengesahan kementerian.
+            Kantor fisik kami hadir di kota strategis: <strong>Jakarta Pusat</strong> (Paseban, Senen), <strong>Bali</strong> (Kuta, Badung), dan <strong>Malang</strong> (Blimbing, Jawa Timur), mempermudah koordinasi tatap muka, penyerahan berkas fisik asli, dan pengesahan kementerian.
           </p>
         </div>
 
@@ -1083,7 +1080,7 @@
           Kantor Cabang Jakarta, Bali & Malang
         </h2>
         <p class="text-base text-slate-600 mt-3">
-          Kami memiliki kantor fisik resmi di <strong>Jakarta</strong>, <strong>Bali (Tuban)</strong>, dan <strong>Malang</strong> untuk memudahkan penyerahan berkas fisik asli, konsultasi tatap muka, dan penjemputan dokumen korporat.
+          Kami memiliki kantor fisik resmi di <strong>Jakarta</strong>, <strong>Bali</strong>, dan <strong>Malang</strong> untuk memudahkan penyerahan berkas fisik asli, konsultasi tatap muka, dan penjemputan dokumen korporat.
         </p>
       </div>
 
@@ -1167,7 +1164,7 @@
           </div>
         </div>
 
-        <!-- Cabang Bali (Tuban) -->
+        <!-- Cabang Bali -->
         <div class="rounded-2xl border-2 border-brand-500/80 bg-white p-7 hover:border-brand-600 shadow-md hover:shadow-xl transition-all flex flex-col justify-between relative">
           <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-brand-800 text-white text-[10px] font-extrabold uppercase tracking-widest shadow-xs">
             Kantor Bali
@@ -1180,9 +1177,9 @@
               <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Airport Hub</span>
             </div>
             <h3 class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Bali</h3>
-            <p class="text-xs text-brand-700 font-semibold mb-3">Tuban, Kuta — Dekat Bandara Ngurah Rai</p>
+            <p class="text-xs text-brand-700 font-semibold mb-3">Kuta, Badung — Dekat Bandara Internasional Ngurah Rai</p>
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Jl. Dewi Sartika No. 2, Desa/Kelurahan Tuban, Kec. Kuta, Kab. Badung, Provinsi Bali.<br>
+              Jl. Dewi Sartika No. 2, Kuta, Kab. Badung, Provinsi Bali.<br>
               <span class="text-slate-500 mt-2 block font-medium">Email: info@b2bsworntranslator.com</span>
               <span class="text-slate-500 block font-medium">WhatsApp: +62 817-341-666 / +62 817-322-287</span>
             </p>
@@ -1396,7 +1393,7 @@
               Untuk proses <strong>Penerjemahan Tersumpah (Sworn Translation)</strong>, kami hanya membutuhkan softcopy scan resolusi tinggi (PDF) yang jelas.
             </p>
             <p class="mt-2">
-              Untuk proses <strong>Apostille Kemenkumham</strong>, verifikasi awal dapat dilakukan via scan dokumen. Namun, untuk pencetakan sertifikat fisik stiker Apostille ber-barcode atau legalisasi kedutaan, dokumen asli atau salinan legalisir notaris terkadang diwajibkan sesuai regulasi otoritas. Tim kami menyediakan penjemputan berkas fisik gratis di area kantor cabang kami di Jakarta, Bali (Tuban/Denpasar), dan Malang.
+              Untuk proses <strong>Apostille Kemenkumham</strong>, verifikasi awal dapat dilakukan via scan dokumen. Namun, untuk pencetakan sertifikat fisik stiker Apostille ber-barcode atau legalisasi kedutaan, dokumen asli atau salinan legalisir notaris terkadang diwajibkan sesuai regulasi otoritas. Tim kami menyediakan penjemputan berkas fisik gratis di area kantor cabang kami di Jakarta, Bali, dan Malang.
             </p>
           </div>
         </div>
@@ -1521,7 +1518,7 @@
               <span>Jl. H. Murtadho XVI No A.589, Senen, Jakarta Pusat</span>
             </li>
             <li>
-              <strong class="text-slate-300 block">Cabang Bali (Tuban):</strong>
+              <strong class="text-slate-300 block">Cabang Bali:</strong>
               <span>Jl. Dewi Sartika No. 2, Kuta, Bali</span>
             </li>
             <li>
