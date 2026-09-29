@@ -75,17 +75,17 @@
         <div class="flex items-center gap-3 overflow-hidden text-ellipsis whitespace-nowrap">
           <div class="flex items-center gap-1.5 text-emerald-400 font-medium shrink-0">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Kantor Buka: <strong>08.00–19.00 WITA</strong></span>
+            <span data-i18n="announcement_hours">Kantor Buka: <strong>08.00–19.00 WITA</strong></span>
           </div>
           <span class="hidden sm:inline text-slate-700">|</span>
           <div class="hidden sm:flex items-center gap-1.5 text-slate-300">
             <i data-lucide="map-pin" class="w-3 h-3 text-accent-400 shrink-0"></i>
-            <span>Cabang: <strong>Jakarta • Bali • Malang</strong></span>
+            <span data-i18n="announcement_branches">Cabang: <strong>Jakarta • Bali • Malang</strong></span>
           </div>
           <span class="hidden md:inline text-slate-700">|</span>
           <div class="hidden md:flex items-center gap-1.5 text-slate-400">
             <i data-lucide="clock" class="w-3 h-3 text-accent-400 shrink-0"></i>
-            <span>CS: Sen–Sab 09.00–17.00 WITA</span>
+            <span data-i18n="direct_hours_cs_val">CS: Sen–Sab 09.00–17.00 WITA</span>
           </div>
         </div>
 
@@ -126,27 +126,57 @@
 
         <!-- Desktop Navigation Links (Spacious & Clean) -->
         <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
-          <a href="#layanan" class="hover:text-brand-900 transition-colors whitespace-nowrap">Layanan</a>
-          <a href="#sektor" class="hover:text-brand-900 transition-colors whitespace-nowrap">Sektor Klien</a>
-          <a href="#alur" class="hover:text-brand-900 transition-colors whitespace-nowrap">Alur Kerja</a>
-          <a href="#keunggulan" class="hover:text-brand-900 transition-colors whitespace-nowrap">Kepatuhan & NDA</a>
-          <a href="#cabang" class="hover:text-brand-900 transition-colors whitespace-nowrap">Cabang</a>
-          <a href="#faq" class="hover:text-brand-900 transition-colors whitespace-nowrap">FAQ</a>
+          <a href="#layanan" data-i18n="nav_services" class="hover:text-brand-900 transition-colors whitespace-nowrap">Layanan</a>
+          <a href="#sektor" data-i18n="nav_sectors" class="hover:text-brand-900 transition-colors whitespace-nowrap">Sektor Klien</a>
+          <a href="#alur" data-i18n="nav_workflow" class="hover:text-brand-900 transition-colors whitespace-nowrap">Alur Kerja</a>
+          <a href="#keunggulan" data-i18n="nav_compliance" class="hover:text-brand-900 transition-colors whitespace-nowrap">Kepatuhan & NDA</a>
+          <a href="#cabang" data-i18n="nav_branches" class="hover:text-brand-900 transition-colors whitespace-nowrap">Cabang</a>
+          <a href="#faq" data-i18n="nav_faq" class="hover:text-brand-900 transition-colors whitespace-nowrap">FAQ</a>
         </div>
 
-        <!-- Action CTA -->
-        <div class="hidden sm:flex items-center">
-          <a href="https://wa.me/62817322287?text=Halo%20Tim%20Bali%20Apostille%2C%20kami%20memerlukan%20penawaran%20resmi%20B2B%20untuk%20penerjemahan%20tersumpah%20dan%20apostille." target="_blank" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-brand-900 hover:bg-brand-800 border border-brand-800 hover:border-brand-700 shadow-xs hover:shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
-            <i data-lucide="message-square" class="w-4 h-4 text-accent-400"></i>
-            <span>Penawaran B2B</span>
-          </a>
-        </div>
+        <!-- Action CTA & Language Selector -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          
+          <!-- Modern Language Selector Dropdown -->
+          <div class="relative" id="lang-selector-container">
+            <button id="lang-menu-btn" type="button" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-slate-300 transition-all focus:outline-hidden cursor-pointer" aria-expanded="false" aria-haspopup="true">
+              <span id="current-lang-flag">🇮🇩</span>
+              <span id="current-lang-code" class="uppercase">ID</span>
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-500"></i>
+            </button>
 
-        <!-- Mobile Menu Button -->
-        <div class="lg:hidden flex items-center">
-          <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-hidden" aria-label="Toggle menu">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
+            <!-- Language Menu Dropdown -->
+            <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-38 bg-white rounded-xl shadow-xl border border-slate-200 py-1.5 z-50">
+              <button type="button" onclick="setLanguage('id')" class="w-full text-left px-3.5 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 flex items-center justify-between transition-colors lang-opt cursor-pointer" data-lang="id">
+                <span class="flex items-center gap-2"><span>🇮🇩</span> <span>Indonesia</span></span>
+                <span class="text-emerald-600 font-bold lang-check">✓</span>
+              </button>
+              <button type="button" onclick="setLanguage('en')" class="w-full text-left px-3.5 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 flex items-center justify-between transition-colors lang-opt cursor-pointer" data-lang="en">
+                <span class="flex items-center gap-2"><span>🇬🇧</span> <span>English</span></span>
+                <span class="text-emerald-600 font-bold lang-check hidden">✓</span>
+              </button>
+              <button type="button" onclick="setLanguage('zh')" class="w-full text-left px-3.5 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 flex items-center justify-between transition-colors lang-opt cursor-pointer" data-lang="zh">
+                <span class="flex items-center gap-2"><span>🇨🇳</span> <span>中文</span></span>
+                <span class="text-emerald-600 font-bold lang-check hidden">✓</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Penawaran B2B Button -->
+          <div class="hidden sm:flex items-center">
+            <a href="https://wa.me/62817322287?text=Halo%20Tim%20Bali%20Apostille%2C%20kami%20memerlukan%20penawaran%20resmi%20B2B%20untuk%20penerjemahan%20tersumpah%20dan%20apostille." target="_blank" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-brand-900 hover:bg-brand-800 border border-brand-800 hover:border-brand-700 shadow-xs hover:shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
+              <i data-lucide="message-square" class="w-4 h-4 text-accent-400"></i>
+              <span data-i18n="nav_b2b_quote">Penawaran B2B</span>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="lg:hidden flex items-center">
+            <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-hidden" aria-label="Toggle menu">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+
         </div>
 
       </div>
@@ -154,15 +184,26 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
-      <a href="#layanan" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Layanan</a>
-      <a href="#sektor" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Sektor Klien</a>
-      <a href="#alur" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Alur Kerja</a>
-      <a href="#keunggulan" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Kepatuhan & NDA</a>
-      <a href="#cabang" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Kantor Cabang</a>
-      <a href="#faq" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">FAQ</a>
+      <!-- Mobile Language Switcher Pills -->
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <span class="text-xs font-bold text-slate-600">Bahasa / Language:</span>
+        <div class="flex items-center gap-1.5">
+          <button type="button" onclick="setLanguage('id')" class="mobile-lang-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-brand-900 text-white shadow-xs" data-lang="id">🇮🇩 ID</button>
+          <button type="button" onclick="setLanguage('en')" class="mobile-lang-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200" data-lang="en">🇬🇧 EN</button>
+          <button type="button" onclick="setLanguage('zh')" class="mobile-lang-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200" data-lang="zh">🇨🇳 中文</button>
+        </div>
+      </div>
+
+      <a href="#layanan" data-i18n="nav_services" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Layanan</a>
+      <a href="#sektor" data-i18n="nav_sectors" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Sektor Klien</a>
+      <a href="#alur" data-i18n="nav_workflow" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Alur Kerja</a>
+      <a href="#keunggulan" data-i18n="nav_compliance" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Kepatuhan & NDA</a>
+      <a href="#cabang" data-i18n="nav_branches" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">Kantor Cabang</a>
+      <a href="#faq" data-i18n="nav_faq" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-brand-700 py-1.5">FAQ</a>
+      
       <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
-        <a href="https://wa.me/62817322287" target="_blank" class="w-full text-center py-2.5 rounded-lg text-sm font-bold text-white bg-brand-800">Hubungi WhatsApp Resmi</a>
-        <a href="mailto:info@b2bsworntranslator.com" class="w-full text-center py-2.5 rounded-lg text-sm font-semibold text-slate-700 bg-slate-100">Kirim Dokumen via Email</a>
+        <a href="https://wa.me/62817322287" target="_blank" data-i18n="mobile_contact_wa" class="w-full text-center py-2.5 rounded-lg text-sm font-bold text-white bg-brand-800">Hubungi WhatsApp Resmi</a>
+        <a href="mailto:info@b2bsworntranslator.com" data-i18n="mobile_contact_email" class="w-full text-center py-2.5 rounded-lg text-sm font-semibold text-slate-700 bg-slate-100">Kirim Dokumen via Email</a>
       </div>
     </div>
   </nav>
@@ -185,16 +226,15 @@
           <!-- Corporate Badge -->
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-800/80 border border-brand-700 text-slate-200 text-xs font-semibold tracking-wide">
             <span class="w-2 h-2 rounded-full bg-accent-400"></span>
-            <span>DIVISI B2B SWORN TRANSLATION & LEGALIZATION • PT SINAR HEKSA EDUKASI</span>
+            <span data-i18n="hero_badge">DIVISI B2B SWORN TRANSLATION & LEGALIZATION • PT SINAR HEKSA EDUKASI</span>
           </div>
 
           <!-- Main Value Prop Headline -->
-          <h1 class="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Penerjemah Tersumpah & Legalisasi Apostille Resmi untuk
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-amber-200 to-accent-500 font-serif italic">Korporasi & Institusi Internasional</span>
+          <h1 data-i18n="hero_title" class="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Penerjemah Tersumpah & Legalisasi Apostille Resmi untuk Korporasi & Institusi Internasional
           </h1>
 
-          <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
+          <p data-i18n="hero_desc" class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
             Solusi terpadu pengurusan dokumen legal lintas yurisdiksi. Diterjemahkan oleh <strong>Penerjemah Tersumpah resmi Kemenkumham</strong>, disertifikasi <strong>Apostille Konvensi Den Haag 1961</strong>, dan dilegalisasi di <strong>Kemenlu & Kedutaan Asing</strong> dengan jaminan kerahasiaan NDA serta akuntabilitas Faktur Pajak.
           </p>
 
@@ -204,25 +244,25 @@
               <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
               </div>
-              <span><strong>Kerahasiaan Dokumen Terjamin</strong>: Penandatanganan Mutual NDA Korporasi.</span>
+              <span data-i18n="comp_1_title"><strong>Kerahasiaan Dokumen Terjamin</strong></span>
             </div>
             <div class="flex items-start gap-2.5">
               <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="badge-check" class="w-3.5 h-3.5"></i>
               </div>
-              <span><strong>Resmi & Diakui Internasional</strong>: AHU Kemenkumham RI & Kedutaan.</span>
+              <span data-i18n="comp_4_title"><strong>Resmi & Diakui Internasional</strong></span>
             </div>
             <div class="flex items-start gap-2.5">
               <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="zap" class="w-3.5 h-3.5"></i>
               </div>
-              <span><strong>SLA Prioritas Express</strong>: Penyelesaian 1–2 hari kerja untuk tender & closing.</span>
+              <span data-i18n="hero_stat_sla"><strong>Jaminan SLA & Penerbitan Faktur Pajak Resmi</strong></span>
             </div>
             <div class="flex items-start gap-2.5">
               <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i>
               </div>
-              <span><strong>Free Pickup & Delivery</strong>: Area Jakarta, Bali, Malang, & ekspedisi DHL.</span>
+              <span data-i18n="hero_pickup_badge"><strong>Free Pickup & Delivery</strong>: Area Jakarta, Bali, Malang, & ekspedisi DHL.</span>
             </div>
           </div>
 
@@ -230,11 +270,11 @@
           <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a href="https://wa.me/62817322287?text=Halo%20Tim%20Bali%20Apostille%2C%20kami%20ingin%20konsultasi%20dan%20review%20dokumen%20korporat%20kami." target="_blank" class="px-7 py-3.5 rounded-xl font-bold text-base text-brand-950 bg-gradient-to-r from-accent-400 to-amber-300 hover:from-accent-500 hover:to-amber-400 shadow-lg shadow-accent-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
               <i data-lucide="message-square-text" class="w-5 h-5"></i>
-              <span>Review Dokumen via WhatsApp</span>
+              <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
             </a>
             <a href="#layanan" class="px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition-all flex items-center justify-center gap-2">
               <i data-lucide="files" class="w-4 h-4 text-slate-300"></i>
-              <span>Jelajahi Katalog Layanan</span>
+              <span data-i18n="service_title">Katalog Layanan Resmi B2B</span>
             </a>
           </div>
 
@@ -242,10 +282,10 @@
           <div class="pt-2 flex items-center gap-3 text-xs text-slate-400 border-t border-slate-800/80">
             <div class="flex items-center gap-1">
               <i data-lucide="building" class="w-4 h-4 text-accent-400"></i>
-              <span>Entitas Berbadan Hukum: <strong>PT Sinar Heksa Edukasi</strong></span>
+              <span>PT Sinar Heksa Edukasi</span>
             </div>
             <span>•</span>
-            <div>Faktur Pajak PPN & Dukungan PO Korporat</div>
+            <div data-i18n="form_guarantee_tax">Faktur Pajak Resmi Tersedia</div>
           </div>
 
         </div>
@@ -258,15 +298,15 @@
             <div class="flex items-center justify-between pb-4 border-b border-slate-100">
               <div>
                 <span class="text-[11px] font-bold tracking-wider uppercase text-brand-700 bg-brand-50 px-2 py-0.5 rounded">Fast B2B Pre-Check</span>
-                <h3 class="text-xl font-bold text-slate-900 mt-1">Formulir Konsultasi & Penawaran</h3>
+                <h3 data-i18n="form_title" class="text-xl font-bold text-slate-900 mt-1">Permintaan Penawaran Cepat B2B</h3>
               </div>
               <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
                 <i data-lucide="shield" class="w-5 h-5"></i>
               </div>
             </div>
 
-            <p class="text-xs text-slate-500 mt-3 mb-5">
-              Unggah kebutuhan legalisasi Anda. Tim Corporate Account Manager kami akan menganalisis jalur legalitas yang tepat (Apostille vs Kedutaan) dan memberikan estimasi resmi dalam hitungan menit.
+            <p data-i18n="form_subtitle" class="text-xs text-slate-500 mt-3 mb-5">
+              Dapatkan estimasi biaya resmi & proyeksi timeline pengerjaan dalam 15-30 menit.
             </p>
 
             <!-- Quick Form -->
@@ -274,55 +314,55 @@
               
               <!-- Nama Perusahaan / Klien -->
               <div>
-                <label for="company-name" class="block text-xs font-semibold text-slate-700 mb-1">Nama Perusahaan / Institusi <span class="text-red-500">*</span></label>
-                <input type="text" id="company-name" required placeholder="Contoh: PT Investasi Global / Law Firm ABC" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
+                <label for="company-name" data-i18n="form_label_company" class="block text-xs font-semibold text-slate-700 mb-1">Nama Perusahaan / Institusi:</label>
+                <input type="text" id="company-name" required data-i18n-placeholder="form_placeholder_company" placeholder="PT Maju Bersama International" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
               </div>
 
               <!-- Jenis Layanan Dibutuhkan -->
               <div>
-                <label for="service-needed" class="block text-xs font-semibold text-slate-700 mb-1">Kebutuhan Layanan Utama <span class="text-red-500">*</span></label>
+                <label for="service-needed" data-i18n="form_label_service" class="block text-xs font-semibold text-slate-700 mb-1">Layanan yang Dibutuhkan:</label>
                 <select id="service-needed" required class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors bg-white">
-                  <option value="">Pilih Layanan Dokumen...</option>
-                  <option value="Paket Lengkap: Sworn Translation + Apostille Kemenkumham">Paket Terpadu: Sworn Translation + Apostille Kemenkumham</option>
-                  <option value="Apostille Kemenkumham RI Saja (120+ Negara Hague)">Apostille Kemenkumham RI Saja (120+ Negara Hague)</option>
-                  <option value="Penerjemahan Tersumpah Resmi (Sworn Translation 25+ Bahasa)">Penerjemahan Tersumpah Resmi (Sworn Translation 25+ Bahasa)</option>
-                  <option value="Legalisasi Berjenjang Kemenkumham, Kemenlu & Kedutaan Asing">Legalisasi Berjenjang Kemenkumham, Kemenlu & Kedutaan Asing (Non-Hague)</option>
-                  <option value="Legalisasi Dokumen Korporat & Notarisasi">Legalisasi Dokumen Korporat & Notarisasi</option>
-                  <option value="Konsultasi Dokumen Ekspatriat / TKA / Direksi">Dokumen Ekspatriat / TKA / Direksi (Ijazah, SKCK, Buku Nikah)</option>
+                  <option value="" data-i18n="form_opt_service_select">-- Pilih Layanan --</option>
+                  <option value="Sworn Translation + Apostille Kemenkumham" data-i18n="form_opt_sworn_apostille">Penerjemah Tersumpah + Apostille Kemenkumham</option>
+                  <option value="Apostille Kemenkumham RI Saja" data-i18n="form_opt_apostille_only">Sertifikasi Apostille Kemenkumham RI Saja</option>
+                  <option value="Penerjemahan Tersumpah Saja (Multi-Bahasa)" data-i18n="form_opt_sworn_only">Penerjemahan Tersumpah Saja (Multi-Bahasa)</option>
+                  <option value="Legalisasi Kedutaan Asing (Non-Hague Country)" data-i18n="form_opt_embassy">Legalisasi Kedutaan Asing (Non-Hague Country)</option>
+                  <option value="Legalisasi Notaris Dokumen Perusahaan" data-i18n="form_opt_notary">Legalisasi Notaris Dokumen Perusahaan</option>
+                  <option value="Layanan Express Priority (1-2 Hari)" data-i18n="form_opt_urgent">Layanan Express Priority (1-2 Hari)</option>
                 </select>
               </div>
 
               <!-- Jenis Dokumen & Negara Tujuan -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label for="doc-type" class="block text-xs font-semibold text-slate-700 mb-1">Jenis Dokumen</label>
-                  <input type="text" id="doc-type" placeholder="Akta, Kontrak, Putusan..." class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
+                  <label for="doc-type" data-i18n="form_label_doctype" class="block text-xs font-semibold text-slate-700 mb-1">Jenis Dokumen:</label>
+                  <input type="text" id="doc-type" data-i18n-placeholder="form_placeholder_doctype" placeholder="Contoh: Akta Perusahaan, Perjanjian Kerjasama, Putusan Pengadilan" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
                 </div>
                 <div>
-                  <label for="country-target" class="block text-xs font-semibold text-slate-700 mb-1">Negara Tujuan</label>
-                  <input type="text" id="country-target" placeholder="Contoh: Belanda, UAE, USA..." class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
+                  <label for="country-target" data-i18n="form_label_country" class="block text-xs font-semibold text-slate-700 mb-1">Negara Tujuan Penggunaan:</label>
+                  <input type="text" id="country-target" data-i18n-placeholder="form_placeholder_country" placeholder="Contoh: Jerman, Singapura, Uni Emirat Arab, AS" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors">
                 </div>
               </div>
 
               <!-- Tingkat Kecepatan -->
               <div>
-                <label for="urgency-option" class="block text-xs font-semibold text-slate-700 mb-1">Prioritas Timeline</label>
+                <label for="urgency-option" data-i18n="form_label_urgency" class="block text-xs font-semibold text-slate-700 mb-1">Tingkat Urgensi:</label>
                 <select id="urgency-option" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors bg-white">
-                  <option value="Reguler B2B (Standar Standar Terbaik)">Reguler B2B (3–5 Hari Kerja)</option>
-                  <option value="Express Priority Track (1–2 Hari Kerja)">Express Priority Track (1–2 Hari Kerja)</option>
-                  <option value="Urgent Tender / Closing (Sesuai Kesepakatan Khusus)">Urgent Tender / Closing (SLA Khusus)</option>
+                  <option value="Standar B2B (3 - 5 Hari Kerja)" data-i18n="form_opt_reguler">Standar B2B (3 - 5 Hari Kerja)</option>
+                  <option value="Express Priority (1 - 2 Hari Kerja)" data-i18n="form_opt_express">Express Priority (1 - 2 Hari Kerja)</option>
+                  <option value="Urgent Same-Day (Khusus Dokumen Tertentu)" data-i18n="form_opt_same_day">Urgent Same-Day (Khusus Dokumen Tertentu)</option>
                 </select>
               </div>
 
               <!-- Action Submit Buttons -->
               <div class="pt-2 space-y-2">
-                <button type="submit" class="w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-emeraldBrand-600 hover:bg-emeraldBrand-500 shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
+                <button type="submit" class="w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 cursor-pointer">
                   <i data-lucide="send" class="w-4 h-4"></i>
-                  <span>Kirim Review ke WhatsApp (+62 817-322-287)</span>
+                  <span data-i18n="form_submit_btn">Kirim Permintaan Penawaran via WhatsApp</span>
                 </button>
                 <p class="text-[11px] text-center text-slate-400">
                   <i data-lucide="lock" class="w-3 h-3 inline mr-1 text-slate-400"></i>
-                  Pemeriksaan awal 100% Gratis & Kerahasiaan Dilindungi.
+                  <span data-i18n="form_guarantee_nda">Jaminan Kerahasiaan Dokumen (NDA)</span>
                 </p>
               </div>
 
@@ -414,11 +454,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Segmentasi Klien B2B</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
+        <span data-i18n="sector_badge" class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Segmentasi Klien B2B</span>
+        <h2 data-i18n="sector_title" class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
           Dirancang Khusus untuk Kebutuhan Presisi Institusional
         </h2>
-        <p class="text-base text-slate-600 mt-3">
+        <p data-i18n="sector_desc" class="text-base text-slate-600 mt-3">
           Kami memahami tingginya standar akurasi, tenggat waktu ketat, dan sensitivitas dokumen yang dihadapi oleh sektor bisnis profesional.
         </p>
       </div>
@@ -430,8 +470,8 @@
           <div class="w-14 h-14 rounded-xl bg-brand-50 text-brand-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="briefcase" class="w-7 h-7"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Korporasi & PMA Multinasional</h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          <h3 data-i18n="sector_1_title" class="text-lg font-bold text-slate-900 mb-2">Korporasi & PMA Multinasional</h3>
+          <p data-i18n="sector_1_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
             Memfasilitasi ekspansi pasar global, merger & akuisisi, tender proyek internasional, serta pelaporan kepatuhan statutori.
           </p>
           <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
@@ -446,8 +486,8 @@
           <div class="w-14 h-14 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="scale" class="w-7 h-7"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Firma Hukum & Legal Counsel</h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          <h3 data-i18n="sector_2_title" class="text-lg font-bold text-slate-900 mb-2">Firma Hukum & Legal Counsel</h3>
+          <p data-i18n="sector_2_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
             Mendukung pengacara dan in-house counsel dalam penyusunan alat bukti, litigasi lintas negara, dan arbitrase komersial.
           </p>
           <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
@@ -462,8 +502,8 @@
           <div class="w-14 h-14 rounded-xl bg-blue-50 text-blue-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="globe-2" class="w-7 h-7"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Institusi Internasional & Kedutaan</h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          <h3 data-i18n="sector_4_title" class="text-lg font-bold text-slate-900 mb-2">Institusi Internasional & Kedutaan</h3>
+          <p data-i18n="sector_4_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
             Melayani perwakilan diplomatik, organisasi non-pemerintah (NGO/INGO), kamar dagang, dan badan riset global.
           </p>
           <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
@@ -478,8 +518,8 @@
           <div class="w-14 h-14 rounded-xl bg-purple-50 text-purple-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="landmark" class="w-7 h-7"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Lembaga Pemerintah & Pendidikan</h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          <h3 data-i18n="sector_5_title" class="text-lg font-bold text-slate-900 mb-2">Pendidikan & Universitas</h3>
+          <p data-i18n="sector_5_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
             Mendukung standarisasi dokumen administrasi publik, pertukaran pendidikan antar-negara, beasiswa, dan kerjasama bilateral.
           </p>
           <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
@@ -502,17 +542,17 @@
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Katalog Layanan Resmi</span>
-          <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
+          <span data-i18n="service_badge" class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Katalog Layanan Resmi</span>
+          <h2 data-i18n="service_title" class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
             Solusi Menyeluruh Penerjemahan & Legalisasi Internasional
           </h2>
-          <p class="text-base text-slate-600 mt-2 max-w-2xl">
+          <p data-i18n="service_desc" class="text-base text-slate-600 mt-2 max-w-2xl">
             Diintegrasikan dalam satu meja penanganan profesional agar perusahaan Anda terhindar dari kendala birokrasi, penolakan kedutaan, atau keterlambatan jadwal tender.
           </p>
         </div>
         <div class="shrink-0">
           <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20konsultasi%20layanan%20resmi%20Bali%20Apostille." target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-brand-800 hover:text-brand-900 underline underline-offset-4">
-            <span>Konsultasi Semua Layanan</span>
+            <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
         </div>
@@ -527,12 +567,12 @@
               <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center font-bold">
                 <i data-lucide="languages" class="w-6 h-6"></i>
               </div>
-              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">25+ Bahasa Resmi</span>
+              <span data-i18n="srv_2_tag" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">25+ Bahasa Resmi</span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
+            <h3 data-i18n="srv_2_title" class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
               Penerjemah Tersumpah (Sworn Translation)
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            <p data-i18n="srv_2_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
               Terjemahan hukum resmi berkekuatan otentik oleh penerjemah yang bersumpah dan terdaftar di Kemenkumham RI. Lengkap dengan stempel basah, tanda tangan legal, dan nomor registrasi resmi.
             </p>
             <div class="space-y-2 text-xs text-slate-500 mb-6 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
@@ -552,7 +592,7 @@
               <span class="font-bold text-slate-800">1 – 3 Hari Kerja</span>
             </div>
             <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20order%20Penerjemah%20Tersumpah%20untuk%20dokumen%20korporat." target="_blank" class="px-3.5 py-2 rounded-lg font-semibold bg-brand-50 text-brand-800 hover:bg-brand-100 transition-colors flex items-center gap-1">
-              <span>Order Layanan</span>
+              <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -561,19 +601,19 @@
         <!-- Layanan 2: Apostille Kemenkumham -->
         <div class="rounded-2xl border-2 border-brand-600/80 bg-gradient-to-b from-brand-50/40 to-white p-7 shadow-md hover:shadow-2xl transition-all flex flex-col justify-between relative">
           <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-brand-800 text-white text-[10px] font-extrabold uppercase tracking-widest shadow-xs">
-            Paling Sering Digunakan
+            Apostille Hub
           </div>
           <div>
             <div class="flex items-center justify-between mb-5">
               <div class="w-12 h-12 rounded-xl bg-brand-800 text-accent-400 flex items-center justify-center font-bold">
                 <i data-lucide="stamp" class="w-6 h-6"></i>
               </div>
-              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-100 text-brand-900 border border-blue-200">120+ Negara Peserta</span>
+              <span data-i18n="srv_1_tag" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-100 text-brand-900 border border-blue-200">120+ Negara Peserta</span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">
+            <h3 data-i18n="srv_1_title" class="text-xl font-bold text-slate-900 mb-2">
               Apostille Kemenkumham RI (Hague Convention)
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            <p data-i18n="srv_1_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
               Sertifikasi satu pintu terpusat dari Ditjen AHU Kemenkumham RI berdasarkan Konvensi Den Haag 1961. Menjadikan dokumen Indonesia langsung berlaku sah di negara-negara mitra tanpa perlu stempel Kemenlu atau Kedutaan.
             </p>
             <div class="space-y-2 text-xs text-slate-500 mb-6 bg-white p-3.5 rounded-xl border border-slate-200">
@@ -593,7 +633,7 @@
               <span class="font-bold text-slate-800">Standar: 4–6 Hari | Express: 1–2 Hari</span>
             </div>
             <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20konsultasi%20layanan%20Apostille%20Kemenkumham%20RI." target="_blank" class="px-3.5 py-2 rounded-lg font-bold bg-brand-800 text-white hover:bg-brand-900 transition-colors flex items-center gap-1">
-              <span>Konsultasi</span>
+              <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -606,12 +646,12 @@
               <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center font-bold">
                 <i data-lucide="landmark" class="w-6 h-6"></i>
               </div>
-              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200">Non-Hague Countries</span>
+              <span data-i18n="srv_3_tag" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200">Non-Hague Countries</span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
-              Legalisasi Berjenjang Kemenlu & Kedutaan Asing
+            <h3 data-i18n="srv_3_title" class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
+              Legalisasi Kemenkumham, Kemenlu & Kedutaan
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            <p data-i18n="srv_3_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
               Pengurusan stempel resmi bertahap untuk negara tujuan yang belum meratifikasi Apostille (seperti Uni Emirat Arab, Qatar, Tiongkok, Mesir, Kuwait, Vietnam, dll.). Penanganan penuh di Jakarta tanpa repot antre.
             </p>
             <div class="space-y-2 text-xs text-slate-500 mb-6 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
@@ -631,7 +671,7 @@
               <span class="font-bold text-slate-800">5 – 10 Hari Kerja</span>
             </div>
             <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20tanya%20syarat%20Legalisasi%20Kemenlu%20dan%20Kedutaan." target="_blank" class="px-3.5 py-2 rounded-lg font-semibold bg-brand-50 text-brand-800 hover:bg-brand-100 transition-colors flex items-center gap-1">
-              <span>Tanya Syarat</span>
+              <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -644,12 +684,12 @@
               <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                 <i data-lucide="scroll-text" class="w-6 h-6"></i>
               </div>
-              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">Legal Corporate Desk</span>
+              <span data-i18n="srv_4_tag" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">Legal Corporate Desk</span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
-              Legalisasi Notaris & Sertifikasi Salinan Sesuai Asli
+            <h3 data-i18n="srv_4_title" class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
+              Legalisasi Notaris Dokumen Korporasi
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            <p data-i18n="srv_4_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
               Pengesahan Waarmerking atau Legalisasi Notaris rekanan resmi di Bali dan Jakarta untuk dokumen internal perusahaan sebelum proses penerjemahan tersumpah dan legalisasi kementerian.
             </p>
             <div class="space-y-2 text-xs text-slate-500 mb-6 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
@@ -669,7 +709,7 @@
               <span class="font-bold text-slate-800">1 – 2 Hari Kerja</span>
             </div>
             <a href="https://wa.me/62817322287?text=Halo%2C%20kami%20butuh%20bantuan%20notarisasi%20dokumen%20perusahaan." target="_blank" class="px-3.5 py-2 rounded-lg font-semibold bg-brand-50 text-brand-800 hover:bg-brand-100 transition-colors flex items-center gap-1">
-              <span>Konsultasi Notaris</span>
+              <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -682,12 +722,12 @@
               <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center font-bold">
                 <i data-lucide="user-check" class="w-6 h-6"></i>
               </div>
-              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200">Expat & Executive Desk</span>
+              <span data-i18n="srv_5_tag" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200">Expat & Executive Desk</span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
-              Dokumen Ekspatriat, TKA & Relokasi Global
+            <h3 data-i18n="srv_5_title" class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
+              Dokumen Ekspatriat, TKA & Relokasi
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            <p data-i18n="srv_5_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
               Paket legalitas lengkap untuk staf ekspatriat, direktur asing, dan keluarga: verifikasi Ijazah/Diploma luar negeri, SKCK Internasional Mabes Polri, Akta Perkawinan / Buku Nikah KUA, dan SKBM (Surat Keterangan Belum Menikah).
             </p>
             <div class="space-y-2 text-xs text-slate-500 mb-6 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
@@ -707,7 +747,7 @@
               <span class="font-bold text-slate-800">3 – 6 Hari Kerja</span>
             </div>
             <a href="https://wa.me/62817322287?text=Halo%2C%20saya%20ingin%20konsultasi%20dokumen%20ekspatriat%2Fdireksi." target="_blank" class="px-3.5 py-2 rounded-lg font-semibold bg-brand-50 text-brand-800 hover:bg-brand-100 transition-colors flex items-center gap-1">
-              <span>Konsultasi Expat</span>
+              <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -720,12 +760,12 @@
               <div class="w-12 h-12 rounded-xl bg-red-100 text-red-700 flex items-center justify-center font-bold">
                 <i data-lucide="zap" class="w-6 h-6"></i>
               </div>
-              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-red-50 text-red-700 border border-red-200">Express Priority 24-48 Jam</span>
+              <span data-i18n="srv_6_tag" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-red-50 text-red-700 border border-red-200">Express Priority 24-48 Jam</span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
-              Express Priority Track (Layanan Kilat Bisnis)
+            <h3 data-i18n="srv_6_title" class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
+              Express Priority Track
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            <p data-i18n="srv_6_desc" class="text-sm text-slate-600 leading-relaxed mb-4">
               Jalur khusus penanganan cepat dengan SLA ketat bagi perusahaan yang menghadapi tenggat waktu mendesak (*tender submission*, penutupan transaksi finansial, atau keberangkatan eksekutif).
             </p>
             <div class="space-y-2 text-xs text-slate-500 mb-6 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
@@ -745,7 +785,7 @@
               <span class="font-bold text-red-600">1 – 2 Hari Kerja</span>
             </div>
             <a href="https://wa.me/62817322287?text=Halo%20Bali%20Apostille%2C%20kami%20membutuhkan%20Layanan%20Express%20Priority%201-2%20Hari." target="_blank" class="px-3.5 py-2 rounded-lg font-bold bg-red-600 text-white hover:bg-red-700 transition-colors flex items-center gap-1">
-              <span>Layanan Express</span>
+              <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -766,11 +806,11 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-accent-400 bg-accent-500/10 px-3.5 py-1.5 rounded-full border border-accent-500/30">Layanan Korporasi & B2B Desk</span>
-        <h2 class="text-3xl font-extrabold text-white mt-3 sm:text-4xl">
+        <span data-i18n="direct_badge" class="text-xs font-extrabold uppercase tracking-widest text-accent-400 bg-accent-500/10 px-3.5 py-1.5 rounded-full border border-accent-500/30">Layanan Korporasi & B2B Desk</span>
+        <h2 data-i18n="direct_title" class="text-3xl font-extrabold text-white mt-3 sm:text-4xl">
           Tanya Estimasi Harga & Konsultasi Resmi B2B
         </h2>
-        <p class="text-sm text-slate-300 mt-2.5 leading-relaxed">
+        <p data-i18n="direct_desc" class="text-sm text-slate-300 mt-2.5 leading-relaxed">
           Konsultasikan kebutuhan legalisasi apostille & penerjemahan tersumpah korporasi Anda langsung dengan Account Executive kami. Dapatkan penawaran resmi (Official Quotation) dalam 15–30 menit.
         </p>
       </div>
@@ -783,9 +823,9 @@
             <div>
               <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-accent-400"></span>
-                <span>Prosedur Cepat Permintaan Penawaran Harga</span>
+                <span data-i18n="direct_steps_heading">Prosedur Cepat Permintaan Penawaran Harga</span>
               </h3>
-              <p class="text-xs text-slate-300 leading-relaxed">
+              <p data-i18n="direct_steps_sub" class="text-xs text-slate-300 leading-relaxed">
                 Kami memahami pentingnya kecepatan dan kepastian biaya pada level korporasi. Tanpa perlu hitung manual, Anda dapat langsung menanyakan estimasi akurat via WhatsApp Corporate Desk:
               </p>
             </div>
@@ -794,24 +834,24 @@
               <div class="flex items-start gap-3">
                 <div class="w-6 h-6 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</div>
                 <div>
-                  <h4 class="text-xs font-bold text-white">Kirimkan Informasi atau Dokumen Draft</h4>
-                  <p class="text-[11px] text-slate-400 leading-relaxed">Sampaikan jenis dokumen, bahasa target, negara tujuan pengesahan, dan estimasi tenggat waktu Anda.</p>
+                  <h4 data-i18n="direct_s1_title" class="text-xs font-bold text-white">Kirimkan Informasi atau Dokumen Draft</h4>
+                  <p data-i18n="direct_s1_desc" class="text-[11px] text-slate-400 leading-relaxed">Sampaikan jenis dokumen, bahasa target, negara tujuan pengesahan, dan estimasi tenggat waktu Anda.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
                 <div class="w-6 h-6 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
                 <div>
-                  <h4 class="text-xs font-bold text-white">Review & Verifikasi Awal Bebas Biaya (100% Free)</h4>
-                  <p class="text-[11px] text-slate-400 leading-relaxed">Tim legal spesialis kami memeriksa kelayakan tanda tangan pejabat, legalisir notaris, dan kesesuaian sistem AHU Kemenkumham RI.</p>
+                  <h4 data-i18n="direct_s2_title" class="text-xs font-bold text-white">Review & Verifikasi Awal Bebas Biaya (100% Free)</h4>
+                  <p data-i18n="direct_s2_desc" class="text-[11px] text-slate-400 leading-relaxed">Tim legal spesialis kami memeriksa kelayakan tanda tangan pejabat, legalisir notaris, dan kesesuaian sistem AHU Kemenkumham RI.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
                 <div class="w-6 h-6 rounded-lg bg-accent-500/20 text-accent-400 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</div>
                 <div>
-                  <h4 class="text-xs font-bold text-white">Penerbitan Surat Penawaran Resmi (Quotation PDF)</h4>
-                  <p class="text-[11px] text-slate-400 leading-relaxed">Menerima penawaran resmi ber-kop surat PT Sinar Heksa Edukasi lengkap dengan timeline, klausul NDA, dan opsi Faktur Pajak.</p>
+                  <h4 data-i18n="direct_s3_title" class="text-xs font-bold text-white">Penerbitan Surat Penawaran Resmi (Quotation PDF)</h4>
+                  <p data-i18n="direct_s3_desc" class="text-[11px] text-slate-400 leading-relaxed">Menerima penawaran resmi ber-kop surat PT Sinar Heksa Edukasi lengkap dengan timeline, klausul NDA, dan opsi Faktur Pajak.</p>
                 </div>
               </div>
             </div>
@@ -819,15 +859,15 @@
             <div class="pt-4 border-t border-slate-700/60 flex flex-wrap gap-4 text-xs text-slate-300">
               <div class="flex items-center gap-1.5">
                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-                <span>Tersedia Jaminan NDA</span>
+                <span data-i18n="direct_badge_nda">Tersedia Jaminan NDA</span>
               </div>
               <div class="flex items-center gap-1.5">
                 <i data-lucide="receipt" class="w-4 h-4 text-emerald-400"></i>
-                <span>Faktur Pajak & Invoice PT</span>
+                <span data-i18n="direct_badge_tax">Faktur Pajak & Invoice PT</span>
               </div>
               <div class="flex items-center gap-1.5">
                 <i data-lucide="truck" class="w-4 h-4 text-emerald-400"></i>
-                <span>Free Pick-Up (Jakarta, Bali, Malang)</span>
+                <span data-i18n="direct_badge_pickup">Free Pick-Up (Jakarta, Bali, Malang)</span>
               </div>
             </div>
           </div>
@@ -836,27 +876,27 @@
           <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-brand-950 rounded-2xl p-6 sm:p-7 border border-slate-700 shadow-xl flex flex-col justify-between text-center sm:text-left">
             <div>
               <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                <span class="text-[11px] uppercase font-extrabold tracking-wider text-accent-400">Corporate Account Desk</span>
-                <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold">Respon Cepat</span>
+                <span data-i18n="direct_card_badge" class="text-[11px] uppercase font-extrabold tracking-wider text-accent-400">Corporate Account Desk</span>
+                <span data-i18n="direct_card_status" class="text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold">Respon Cepat</span>
               </div>
 
               <div class="my-5">
-                <h4 class="text-xl font-bold text-white mb-1.5">Tanya Estimasi Harga</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">
+                <h4 data-i18n="direct_card_title" class="text-xl font-bold text-white mb-1.5">Tanya Estimasi Harga</h4>
+                <p data-i18n="direct_card_desc" class="text-xs text-slate-400 leading-relaxed">
                   Terhubung langsung dengan Account Executive kami melalui WhatsApp untuk konsultasi cepat, penawaran harga khusus volume korporasi, atau penjemputan berkas fisik.
                 </p>
               </div>
 
               <div class="bg-slate-800/80 rounded-xl p-3.5 mb-5 border border-slate-700/60 text-left space-y-2">
-                <div class="text-[11px] text-slate-400">Jam Pelayanan CS & WhatsApp:</div>
+                <div data-i18n="direct_hours_cs_label" class="text-[11px] text-slate-400">Jam Pelayanan CS & WhatsApp:</div>
                 <div class="text-xs font-bold text-white flex items-center gap-1.5">
                   <i data-lucide="clock" class="w-3.5 h-3.5 text-accent-400"></i>
-                  <span>Senin – Sabtu, 09.00 - 17.00 WITA</span>
+                  <span data-i18n="direct_hours_cs_val">Senin – Sabtu, 09.00 - 17.00 WITA</span>
                 </div>
-                <div class="text-[11px] text-slate-400 pt-1.5 border-t border-slate-700/50">Jam Operasional Kantor Cabang:</div>
+                <div data-i18n="direct_hours_office_label" class="text-[11px] text-slate-400 pt-1.5 border-t border-slate-700/50">Jam Operasional Kantor Cabang:</div>
                 <div class="text-xs font-bold text-white flex items-center gap-1.5">
                   <i data-lucide="building-2" class="w-3.5 h-3.5 text-accent-400"></i>
-                  <span>Setiap Hari, 08.00 - 19.00 WITA</span>
+                  <span data-i18n="direct_hours_office_val">Setiap Hari, 08.00 - 19.00 WITA</span>
                 </div>
               </div>
             </div>
@@ -864,18 +904,18 @@
             <div class="space-y-2.5">
               <a href="https://wa.me/62817322287?text=Halo%20Tim%20Bali%20Apostille%2C%20kami%20ingin%20konsultasi%20dan%20menanyakan%20estimasi%20harga%20layanan%20B2B." target="_blank" class="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-brand-950 bg-gradient-to-r from-accent-400 to-amber-300 hover:from-accent-500 hover:to-amber-400 shadow-lg shadow-accent-500/20 transition-all flex items-center justify-center gap-2 group">
                 <i data-lucide="message-circle" class="w-4 h-4 text-brand-950"></i>
-                <span>Tanya Estimasi via WhatsApp</span>
+                <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
                 <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
               </a>
 
               <a href="mailto:info@b2bsworntranslator.com?subject=Permintaan%20Estimasi%20Harga%20B2B%20-%20Bali%20Apostille" class="w-full py-2.5 px-4 rounded-xl font-semibold text-xs text-slate-300 bg-slate-800 hover:bg-slate-700 hover:text-white transition-all flex items-center justify-center gap-2 border border-slate-700">
                 <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-400"></i>
-                <span>Kirim Dokumen via Email</span>
+                <span data-i18n="direct_email_btn">Kirim Dokumen via Email</span>
               </a>
             </div>
 
             <p class="text-[10px] text-center text-slate-500 mt-4">
-              Hotline Corporate: <strong class="text-slate-300">+62 817-322-287</strong>
+              <span data-i18n="direct_hotline_text">Hotline Corporate:</span> <strong class="text-slate-300">+62 817-322-287</strong>
             </p>
           </div>
 
@@ -892,12 +932,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Keunggulan Kemitraan B2B</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
-          Standar Tata Kelola & Keamanan Bertaraf Internasional
+        <span data-i18n="compliance_badge" class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Kepercayaan Institusi</span>
+        <h2 data-i18n="compliance_title" class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
+          Kepatuhan Hukum & Keunggulan Korporat
         </h2>
-        <p class="text-base text-slate-600 mt-3">
-          Kami memposisikan diri bukan sekadar vendor penerjemah, melainkan mitra strategis operasional legalitas bagi korporasi dan institusi global Anda.
+        <p data-i18n="compliance_desc" class="text-base text-slate-600 mt-3">
+          Mengapa ratusan korporasi mempercayakan dokumen hukum mereka kepada Bali Apostille — PT Sinar Heksa Edukasi.
         </p>
       </div>
 
@@ -908,9 +948,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center mb-6">
             <i data-lucide="shield-check" class="w-6 h-6 text-accent-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Kerahasiaan Berstandar NDA</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Seluruh data bisnis, perjanjian rahasia, dan dokumen persidangan dilindungi oleh perjanjian kerahasiaan (Non-Disclosure Agreement) formal. Sistem penyimpanan data kami menerapkan enkripsi ketat.
+          <h3 data-i18n="comp_1_title" class="text-xl font-bold text-slate-900 mb-3">Jaminan Kerahasiaan (NDA Terbuka)</h3>
+          <p data-i18n="comp_1_desc" class="text-sm text-slate-600 leading-relaxed">
+            Kami menandatangani Non-Disclosure Agreement (NDA) untuk setiap berkas korporat. Data Anda tersimpan dalam sistem terenkripsi dengan protokol keamanan ketat.
           </p>
         </div>
 
@@ -919,9 +959,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center mb-6">
             <i data-lucide="receipt" class="w-6 h-6 text-accent-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Akuntabilitas Finansial & Faktur Pajak</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Dikelola langsung di bawah entitas resmi <strong>PT Sinar Heksa Edukasi</strong>. Kami menerbitkan Faktur Pajak PPN resmi, Purchase Order (PO) clearance, dan skema Terms of Payment (TOP) untuk klien korporat terdaftar.
+          <h3 data-i18n="comp_2_title" class="text-xl font-bold text-slate-900 mb-3">Faktur Pajak & Tagihan Resmi PT</h3>
+          <p data-i18n="comp_2_desc" class="text-sm text-slate-600 leading-relaxed">
+            Transaksi legal dan patuh perpajakan Indonesia. Kami menerbitkan invoice resmi atas nama PT Sinar Heksa Edukasi lengkap dengan Faktur Pajak elektronik (e-Faktur PPN).
           </p>
         </div>
 
@@ -930,9 +970,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center mb-6">
             <i data-lucide="user-cog" class="w-6 h-6 text-accent-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Dedicated B2B Account Manager</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Anda tidak perlu menjelaskan ulang kasus dokumen kepada admin yang berbeda-beda. Satu Corporate Specialist kami ditugaskan mengawal seluruh proses berkas Anda dari awal hingga dokumen tiba di meja Anda.
+          <h3 data-i18n="comp_4_title" class="text-xl font-bold text-slate-900 mb-3">Penerjemah Tersumpah Terdaftar Kemenkumham</h3>
+          <p data-i18n="comp_4_desc" class="text-sm text-slate-600 leading-relaxed">
+            Seluruh sworn translator kami terdaftar resmi di Ditjen AHU Kemenkumham RI dengan nomor SK yang dapat diverifikasi oleh kedutaan besar maupun kementerian luar negeri.
           </p>
         </div>
 
@@ -941,9 +981,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center mb-6">
             <i data-lucide="map-pin" class="w-6 h-6 text-accent-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Jaringan Kantor Cabang: Jakarta, Bali & Malang</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Kantor fisik kami hadir di kota strategis: <strong>Jakarta Pusat</strong> (Paseban, Senen), <strong>Bali</strong> (Kuta, Badung), dan <strong>Malang</strong> (Blimbing, Jawa Timur), mempermudah koordinasi tatap muka, penyerahan berkas fisik asli, dan pengesahan kementerian.
+          <h3 data-i18n="comp_3_title" class="text-xl font-bold text-slate-900 mb-3">Jaringan Cabang: Jakarta, Bali & Malang</h3>
+          <p data-i18n="comp_3_desc" class="text-sm text-slate-600 leading-relaxed">
+            Kantor fisik kami hadir di kota strategis: Jakarta Pusat (Paseban, Senen), Bali (Kuta, Badung), dan Malang (Blimbing, Jawa Timur) mempermudah koordinasi tatap muka dan penyerahan berkas fisik asli.
           </p>
         </div>
 
@@ -952,9 +992,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center mb-6">
             <i data-lucide="badge-percent" class="w-6 h-6 text-accent-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Garansi Diterima 100% (No Rejection)</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Kami melakukan audit kepatuhan dan validasi stempel sebelum dokumen diproses. Setiap hasil terjemahan dan sertifikat Apostille dijamin sah dan diakui oleh kementerian luar negeri dan kedutaan besar negara tujuan.
+          <h3 data-i18n="comp_5_title" class="text-xl font-bold text-slate-900 mb-3">Jaminan Bebas Penolakan (100% Guaranteed)</h3>
+          <p data-i18n="comp_5_desc" class="text-sm text-slate-600 leading-relaxed">
+            Verifikasi berlapis memastikan format, terminologi hukum, stempel kedutaan, serta kode barcode sertifikat Apostille memenuhi kriteria otoritas negara tujuan.
           </p>
         </div>
 
@@ -963,9 +1003,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-900 text-white flex items-center justify-center mb-6">
             <i data-lucide="plane-takeoff" class="w-6 h-6 text-accent-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Logistik Ekspres & DHL Worldwide</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Layanan penjemputan fisik dokumen asli bebas biaya di Bali & Jakarta. Untuk pengiriman hasil legalisasi ke kantor pusat klien di mancanegara, kami bekerjasama langsung dengan kurir terpercaya DHL Express dengan tracking nomor real-time.
+          <h3 data-i18n="comp_6_title" class="text-xl font-bold text-slate-900 mb-3">Pengiriman Aman Internasional & Domestik</h3>
+          <p data-i18n="comp_6_desc" class="text-sm text-slate-600 leading-relaxed">
+            Layanan pick-up dokumen gratis di area kantor cabang serta opsi pengiriman internasional door-to-door dengan nomor pelacakan real-time melalui kurir DHL Express.
           </p>
         </div>
 
@@ -981,69 +1021,58 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Alur Kerja Praktis</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
-          5 Tahap Mudah Pengurusan Dokumen dari Meja Kerja Anda
+        <span data-i18n="workflow_badge" class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Efisien & Terstruktur</span>
+        <h2 data-i18n="workflow_title" class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
+          Alur Kerja 4 Langkah Transparan
         </h2>
-        <p class="text-base text-slate-600 mt-3">
-          Perusahaan Anda tidak perlu membuang waktu mengantre di kementerian atau kantor kedutaan. Serahkan seluruh birokrasi legalitas kepada tim ahli kami.
+        <p data-i18n="workflow_desc" class="text-base text-slate-600 mt-3">
+          Kami menyederhanakan birokrasi legalisasi yang rumit menjadi proses yang mudah dipantau oleh tim korporat Anda.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
         
         <!-- Step 1 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center relative group hover:border-brand-500 transition-colors">
           <div class="w-10 h-10 rounded-full bg-brand-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            1
+            01
           </div>
-          <h4 class="text-base font-bold text-slate-900 mb-2">Review Digital</h4>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Kirimkan pindaian (scan) / foto berkas via formulir website atau WhatsApp untuk audit kelayakan teknis tanpa biaya.
+          <h4 data-i18n="step_1_title" class="text-base font-bold text-slate-900 mb-2">Konsultasi & Review Dokumen</h4>
+          <p data-i18n="step_1_desc" class="text-xs text-slate-500 leading-relaxed">
+            Kirimkan scan dokumen via WhatsApp atau email. Tim legal kami memverifikasi spesimen tanda tangan dan kelayakan Apostille secara bebas biaya (Free Pre-Check).
           </p>
         </div>
 
         <!-- Step 2 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center relative group hover:border-brand-500 transition-colors">
           <div class="w-10 h-10 rounded-full bg-brand-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            2
+            02
           </div>
-          <h4 class="text-base font-bold text-slate-900 mb-2">Penawaran & NDA</h4>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Kami menerbitkan surat penawaran harga resmi (Quotation), rincian timeline SLA, dan penandatanganan perjanjian kerahasiaan NDA.
+          <h4 data-i18n="step_2_title" class="text-base font-bold text-slate-900 mb-2">Penerbitan Penawaran Resmi & NDA</h4>
+          <p data-i18n="step_2_desc" class="text-xs text-slate-500 leading-relaxed">
+            Kami mengirimkan Quotation resmi dengan rincian timeline dan biaya transparan, dilengkapi penandatanganan perjanjian kerahasiaan (NDA).
           </p>
         </div>
 
         <!-- Step 3 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center relative group hover:border-brand-500 transition-colors">
           <div class="w-10 h-10 rounded-full bg-brand-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            3
+            03
           </div>
-          <h4 class="text-base font-bold text-slate-900 mb-2">Proses Pengesahan</h4>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Penerjemahan tersumpah resmi, notarisasi, registrasi Ditjen AHU Kemenkumham, serta pengesahan konsuler kedutaan.
+          <h4 data-i18n="step_3_title" class="text-base font-bold text-slate-900 mb-2">Proses Terjemahan & Legalisasi</h4>
+          <p data-i18n="step_3_desc" class="text-xs text-slate-500 leading-relaxed">
+            Penerjemah Tersumpah menyelesaikan terjemahan resmi, dilanjutkan proses verifikasi dan stempel stiker sertifikat Apostille di instansi kementerian.
           </p>
         </div>
 
         <!-- Step 4 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center relative group hover:border-brand-500 transition-colors">
           <div class="w-10 h-10 rounded-full bg-brand-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            4
+            04
           </div>
-          <h4 class="text-base font-bold text-slate-900 mb-2">Validasi Barcode</h4>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Pengecekan kualitas akhir (QC) dan konfirmasi validitas nomor barcode sertifikat Apostille bersama klien sebelum pengiriman.
-          </p>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center relative group hover:border-brand-500 transition-colors">
-          <div class="w-10 h-10 rounded-full bg-brand-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-            5
-          </div>
-          <h4 class="text-base font-bold text-slate-900 mb-2">Pengiriman Aman</h4>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Salinan digital bersertifikat dikirim instan, dan dokumen fisik asli diantar langsung ke kantor Anda atau via kurir DHL Express.
+          <h4 data-i18n="step_4_title" class="text-base font-bold text-slate-900 mb-2">Quality Control & Pengiriman</h4>
+          <p data-i18n="step_4_desc" class="text-xs text-slate-500 leading-relaxed">
+            Pemeriksaan akhir, pengiriman file softcopy PDF beresolusi tinggi, dan pengiriman berkas fisik asli ke kantor Anda via kurir ekspres berasuransi.
           </p>
         </div>
 
@@ -1056,12 +1085,12 @@
             <i data-lucide="check-check" class="w-6 h-6"></i>
           </div>
           <div>
-            <h5 class="text-sm font-bold text-slate-900">Pemberitahuan Progres Real-Time via WhatsApp</h5>
-            <p class="text-xs text-slate-500 mt-0.5">Setiap tahap perkembangan dokumen Anda dilaporkan secara transparan sehingga Anda selalu dapat mengontrol timeline proyek.</p>
+            <h5 data-i18n="hero_stat_sla" class="text-sm font-bold text-slate-900">Jaminan SLA & Penerbitan Faktur Pajak Resmi</h5>
+            <p data-i18n="direct_steps_sub" class="text-xs text-slate-500 mt-0.5">Setiap tahap perkembangan dokumen Anda dilaporkan secara transparan sehingga Anda selalu dapat mengontrol timeline proyek.</p>
           </div>
         </div>
         <a href="https://wa.me/62817322287?text=Halo%20Admin%20Bali%20Apostille%2C%20saya%20ingin%20konsultasi%20alur%20pengurusan%20dokumen%20perusahaan." target="_blank" class="px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-brand-800 hover:bg-brand-900 shrink-0">
-          Mulai Konsultasi Gratis
+          <span data-i18n="direct_wa_btn">Tanya Estimasi via WhatsApp</span>
         </a>
       </div>
 
@@ -1075,11 +1104,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Jaringan Kantor Cabang Kami</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
+        <span data-i18n="branch_badge" class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Jaringan Kantor Cabang Kami</span>
+        <h2 data-i18n="branch_title" class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
           Kantor Cabang Jakarta, Bali & Malang
         </h2>
-        <p class="text-base text-slate-600 mt-3">
+        <p data-i18n="branch_desc" class="text-base text-slate-600 mt-3">
           Kami memiliki kantor fisik resmi di <strong>Jakarta</strong>, <strong>Bali</strong>, dan <strong>Malang</strong> untuk memudahkan penyerahan berkas fisik asli, konsultasi tatap muka, dan penjemputan dokumen korporat.
         </p>
       </div>
@@ -1094,8 +1123,8 @@
           </div>
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-accent-400">Respon Cepat Konsultasi</span>
-            <h3 class="text-xl font-bold text-white mt-1">Jam Pelayanan CS & WhatsApp</h3>
-            <p class="text-2xl font-extrabold text-white mt-2">
+            <h3 data-i18n="direct_hours_cs_label" class="text-xl font-bold text-white mt-1">Jam Pelayanan CS & WhatsApp</h3>
+            <p data-i18n="direct_hours_cs_val" class="text-2xl font-extrabold text-white mt-2">
               Senin – Sabtu, 09.00 – 17.00 WITA
             </p>
             <p class="text-xs text-slate-300 mt-2">
@@ -1117,8 +1146,8 @@
           </div>
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Akses Kantor Fisik</span>
-            <h3 class="text-xl font-bold text-white mt-1">Jam Operasional Kantor</h3>
-            <p class="text-2xl font-extrabold text-white mt-2">
+            <h3 data-i18n="direct_hours_office_label" class="text-xl font-bold text-white mt-1">Jam Operasional Kantor</h3>
+            <p data-i18n="direct_hours_office_val" class="text-2xl font-extrabold text-white mt-2">
               Setiap Hari, 08.00 – 19.00 WITA
             </p>
             <p class="text-xs text-slate-300 mt-2">
@@ -1147,9 +1176,9 @@
               </div>
               <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-brand-800">Pusat Kementerian</span>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Jakarta</h3>
-            <p class="text-xs text-brand-700 font-semibold mb-3">Jakarta Pusat — Akses Cepat Kemenkumham & Kemenlu</p>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            <h3 data-i18n="branch_jk_title" class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Jakarta</h3>
+            <p data-i18n="branch_jk_sub" class="text-xs text-brand-700 font-semibold mb-3">Jakarta Pusat — Akses Cepat Kemenkumham & Kemenlu</p>
+            <p data-i18n="branch_jk_addr" class="text-xs text-slate-600 leading-relaxed mb-4">
               Jl. H. Murtadho XVI, No A.589, Kel. Paseban, Kec. Senen, Jakarta Pusat 10440.<br>
               <span class="text-slate-500 mt-2 block font-medium">Email: info@b2bsworntranslator.com</span>
               <span class="text-slate-500 block font-medium">WhatsApp: +62 817-326-167 / +62 817-322-287</span>
@@ -1158,9 +1187,9 @@
           <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
             <a href="https://g.co/kgs/gG9d6S6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-slate-700 hover:text-brand-700">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent-500"></i>
-              <span>Google Maps</span>
+              <span data-i18n="branch_btn_maps">Google Maps</span>
             </a>
-            <a href="https://wa.me/62817326167?text=Halo%20B2B%20Sworn%20Translator%20Jakarta%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
+            <a href="https://wa.me/62817326167?text=Halo%20B2B%20Sworn%20Translator%20Jakarta%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" data-i18n="branch_btn_contact" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
           </div>
         </div>
 
@@ -1176,9 +1205,9 @@
               </div>
               <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Airport Hub</span>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Bali</h3>
-            <p class="text-xs text-brand-700 font-semibold mb-3">Kuta, Badung — Dekat Bandara Internasional Ngurah Rai</p>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            <h3 data-i18n="branch_bali_title" class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Bali</h3>
+            <p data-i18n="branch_bali_sub" class="text-xs text-brand-700 font-semibold mb-3">Kuta, Badung — Dekat Bandara Internasional Ngurah Rai</p>
+            <p data-i18n="branch_bali_addr" class="text-xs text-slate-600 leading-relaxed mb-4">
               Jl. Dewi Sartika No. 2, Kuta, Kab. Badung, Provinsi Bali.<br>
               <span class="text-slate-500 mt-2 block font-medium">Email: info@b2bsworntranslator.com</span>
               <span class="text-slate-500 block font-medium">WhatsApp: +62 817-341-666 / +62 817-322-287</span>
@@ -1187,9 +1216,9 @@
           <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
             <a href="https://share.google/8XPkV8nYPGhQ56ERS" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-slate-700 hover:text-brand-700">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent-500"></i>
-              <span>Google Maps</span>
+              <span data-i18n="branch_btn_maps">Google Maps</span>
             </a>
-            <a href="https://wa.me/62817341666?text=Halo%20B2B%20Sworn%20Translator%20Bali%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
+            <a href="https://wa.me/62817341666?text=Halo%20B2B%20Sworn%20Translator%20Bali%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" data-i18n="branch_btn_contact" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
           </div>
         </div>
 
@@ -1202,9 +1231,9 @@
               </div>
               <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900">Jawa Timur Hub</span>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Malang</h3>
-            <p class="text-xs text-amber-700 font-semibold mb-3">Kota Malang — Layanan Regional Jawa Timur</p>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            <h3 data-i18n="branch_mlg_title" class="text-lg font-bold text-slate-900 mb-1">B2B Sworn Translator Malang</h3>
+            <p data-i18n="branch_mlg_sub" class="text-xs text-amber-700 font-semibold mb-3">Kota Malang — Layanan Regional Jawa Timur</p>
+            <p data-i18n="branch_mlg_addr" class="text-xs text-slate-600 leading-relaxed mb-4">
               Jalan Terusan Batubara Gg. V No.21, RT.05/RW.09, Desa Pandan Wangi, Kec. Blimbing, Kota Malang, Jawa Timur 85124.<br>
               <span class="text-slate-500 mt-2 block font-medium">Email: info@b2bsworntranslator.com</span>
               <span class="text-slate-500 block font-medium">WhatsApp: +62 817-322-287</span>
@@ -1213,9 +1242,9 @@
           <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
             <a href="https://share.google/TpYWACMzGF3khrVFu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-slate-700 hover:text-brand-700">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent-500"></i>
-              <span>Google Maps</span>
+              <span data-i18n="branch_btn_maps">Google Maps</span>
             </a>
-            <a href="https://wa.me/62817322287?text=Halo%20B2B%20Sworn%20Translator%20Malang%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
+            <a href="https://wa.me/62817322287?text=Halo%20B2B%20Sworn%20Translator%20Malang%2C%20saya%20ingin%20konsultasi%20layanan%20dokumen." target="_blank" data-i18n="branch_btn_contact" class="font-bold text-brand-700 hover:text-brand-900">Hubungi Cabang ➔</a>
           </div>
         </div>
 
@@ -1329,11 +1358,11 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Bantuan & Regulasi</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
+        <span data-i18n="faq_badge" class="text-xs font-extrabold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Bantuan & Regulasi</span>
+        <h2 data-i18n="faq_title" class="text-3xl font-extrabold text-slate-900 mt-3 sm:text-4xl">
           Pertanyaan Seputar Layanan B2B & Legalitas
         </h2>
-        <p class="text-base text-slate-600 mt-3">
+        <p data-i18n="faq_desc" class="text-base text-slate-600 mt-3">
           Hal-hal penting yang sering dikonsultasikan oleh klien korporasi, legal counsel, dan lembaga internasional.
         </p>
       </div>
@@ -1343,10 +1372,10 @@
         <!-- FAQ 1 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden">
           <button class="faq-accordion-btn w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
-            <span>Apa perbedaan mendasar antara Sertifikat Apostille dan Legalisasi Biasa?</span>
+            <span data-i18n="faq_1_q">Apa perbedaan mendasar antara Sertifikat Apostille dan Legalisasi Biasa?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-200"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
+          <div data-i18n="faq_1_a" class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
             <p>
               <strong>Apostille</strong> adalah sistem pengesahan dokumen terpadu satu pintu melalui Kemenkumham RI berdasarkan Konvensi Den Haag 1961. Sertifikat Apostille diakui langsung di lebih dari 120 negara anggota (termasuk USA, negara Uni Eropa, Australia, Jepang, Korea Selatan, UK, dll.) tanpa perlu lagi legalisasi ke Kementerian Luar Negeri maupun Kedutaan Asing.
             </p>
@@ -1359,10 +1388,10 @@
         <!-- FAQ 2 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden">
           <button class="faq-accordion-btn w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
-            <span>Bagaimana jaminan kerahasiaan dokumen korporasi yang kami serahkan?</span>
+            <span data-i18n="faq_2_q">Bagaimana jaminan kerahasiaan dokumen korporasi yang kami serahkan?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-200"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
+          <div data-i18n="faq_2_a" class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
             <p>
               Kerahasiaan dokumen adalah komitmen mutlak kami. PT Sinar Heksa Edukasi siap menandatangani perjanjian kerahasiaan (Non-Disclosure Agreement / NDA) sebelum berkas dikirimkan. Penerjemah tersumpah kami terikat secara hukum oleh sumpah jabatan negara untuk menjaga kerahasiaan isi dokumen. Seluruh arsip digital disimpan dalam repositori terenkripsi dan dapat dihapus permanen atas permintaan resmi klien setelah proyek selesai.
             </p>
@@ -1372,10 +1401,10 @@
         <!-- FAQ 3 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden">
           <button class="faq-accordion-btn w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
-            <span>Apakah perusahaan kami dapat memperoleh Faktur Pajak resmi dan skema Term of Payment (TOP)?</span>
+            <span data-i18n="faq_3_q">Apakah perusahaan kami dapat memperoleh Faktur Pajak resmi dan skema Term of Payment (TOP)?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-200"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
+          <div data-i18n="faq_3_a" class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
             <p>
               Ya, tentu. Sebagai entitas perseroan terbatas (PT Sinar Heksa Edukasi), kami menyediakan invoice formal lengkap dengan Faktur Pajak PPN sesuai ketentuan perpajakan Indonesia. Untuk korporasi dan firma hukum yang memiliki perjanjian kerjasama berkelanjutan (retainer / corporate account), kami menyediakan fasilitas Term of Payment (TOP) berbasis Purchase Order (PO).
             </p>
@@ -1385,10 +1414,10 @@
         <!-- FAQ 4 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden">
           <button class="faq-accordion-btn w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
-            <span>Apakah dokumen asli wajib dikirimkan fisik, atau cukup dengan softcopy/scan?</span>
+            <span data-i18n="faq_4_q">Apakah dokumen asli wajib dikirimkan fisik, atau cukup dengan softcopy/scan?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-200"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
+          <div data-i18n="faq_4_a" class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
             <p>
               Untuk proses <strong>Penerjemahan Tersumpah (Sworn Translation)</strong>, kami hanya membutuhkan softcopy scan resolusi tinggi (PDF) yang jelas.
             </p>
@@ -1401,12 +1430,25 @@
         <!-- FAQ 5 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden">
           <button class="faq-accordion-btn w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
-            <span>Berapa lama estimasi pengerjaan untuk jalur Express Priority?</span>
+            <span data-i18n="faq_5_q">Berapa lama estimasi pengerjaan untuk jalur Express Priority?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-200"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
+          <div data-i18n="faq_5_a" class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
             <p>
               Untuk kebutuhan mendesak (*urgent corporate closing*), jalur <strong>Express Priority</strong> kami dapat menyelesaikan penerjemahan tersumpah dalam 24 jam dan proses Apostille Kemenkumham dalam 1–2 hari kerja (tergantung kelayakan spesimen tanda tangan pejabat di sistem AHU). Tim spesialis prioritas kami akan mengawal berkas Anda secara terdedikasi.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="border border-slate-200 rounded-2xl overflow-hidden">
+          <button class="faq-accordion-btn w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
+            <span data-i18n="faq_6_q">Apakah PT Sinar Heksa Edukasi menerbitkan Faktur Pajak resmi PPN?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-200"></i>
+          </button>
+          <div data-i18n="faq_6_a" class="faq-content hidden px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed bg-white">
+            <p>
+              <strong>Tentu saja.</strong> Sebagai badan hukum berizin resmi di Indonesia, kami melayani penerbitan Invoice resmi korporasi, kuitansi bermaterai, dan <strong>e-Faktur PPN</strong> resmi yang dapat digunakan sebagai bukti pemotongan dan pelaporan pajak perusahaan Anda.
             </p>
           </div>
         </div>
@@ -1420,7 +1462,7 @@
         </p>
         <a href="https://wa.me/62817322287?text=Halo%20Bali%20Apostille%2C%20saya%20ingin%20berkonsultasi%20mengenai%20syarat%20khusus%20dokumen%20perusahaan." target="_blank" class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-brand-800 hover:text-brand-900 underline underline-offset-4">
           <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
-          <span>Konsultasi Langsung dengan Tim Ahli Kami via WhatsApp</span>
+          <span data-i18n="direct_card_badge">Konsultasi Langsung dengan Tim Ahli Kami via WhatsApp</span>
         </a>
       </div>
 
@@ -1437,32 +1479,32 @@
       
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-800/80 border border-brand-700 text-slate-200 text-xs font-semibold mb-6">
         <i data-lucide="clock" class="w-3.5 h-3.5 text-accent-400"></i>
-        <span>Jam Operasional Kantor Buka Setiap Hari: 08.00 – 19.00 WITA</span>
+        <span data-i18n="final_cta_badge">Jam Operasional Kantor Buka Setiap Hari: 08.00 – 19.00 WITA</span>
       </div>
 
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+      <h2 data-i18n="final_cta_title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
         Siap Mengakselerasi Kepatuhan Hukum Dokumen Bisnis Anda?
       </h2>
 
-      <p class="text-base sm:text-lg text-slate-300 mt-4 max-w-2xl mx-auto leading-relaxed">
+      <p data-i18n="final_cta_desc" class="text-base sm:text-lg text-slate-300 mt-4 max-w-2xl mx-auto leading-relaxed">
         Kirimkan salinan dokumen Anda sekarang untuk <strong>analisis awal 100% gratis</strong>. Tim Corporate Desk Bali Apostille (PT Sinar Heksa Edukasi) siap memetakan jalur legalitas tercepat dan paling efisien.
       </p>
 
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="https://wa.me/62817322287?text=Halo%20Bali%20Apostille%2C%20kami%20dari%20perusahaan%20ingin%20segera%20memproses%20dokumen%20legal%20kami." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base text-brand-950 bg-gradient-to-r from-accent-400 to-amber-300 hover:from-accent-500 hover:to-amber-400 shadow-xl shadow-accent-500/25 transition-all flex items-center justify-center gap-2.5">
           <i data-lucide="phone-call" class="w-5 h-5"></i>
-          <span>Hubungi Corporate WhatsApp (+62 817-322-287)</span>
+          <span data-i18n="final_cta_wa_btn">Hubungi Corporate WhatsApp (+62 817-322-287)</span>
         </a>
         <a href="mailto:info@b2bsworntranslator.com" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-sm text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition-all flex items-center justify-center gap-2">
           <i data-lucide="mail" class="w-4 h-4"></i>
-          <span>Kirim RFQ via Email Resmi</span>
+          <span data-i18n="final_cta_email_btn">Kirim RFQ via Email Resmi</span>
         </a>
       </div>
 
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-xs text-slate-400 border-t border-slate-800/80 pt-6">
-        <div>✓ Review Awal 100% Gratis</div>
-        <div>✓ Penandatanganan NDA Korporat</div>
-        <div>✓ Perlindungan SLA & Faktur Pajak</div>
+        <div data-i18n="final_cta_f1">✓ Review Awal 100% Gratis</div>
+        <div data-i18n="final_cta_f2">✓ Penandatanganan NDA Korporat</div>
+        <div data-i18n="final_cta_f3">✓ Perlindungan SLA & Faktur Pajak</div>
       </div>
 
     </div>
@@ -1487,7 +1529,7 @@
               <span class="block text-[11px] text-slate-400 font-medium">B2B Sworn Translation & Legalization Desk</span>
             </div>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed pr-6">
+          <p data-i18n="footer_corp_desc" class="text-xs text-slate-400 leading-relaxed pr-6">
             Layanan B2B Sworn Translator resmi berbadan hukum di bawah <strong>PT Sinar Heksa Edukasi</strong>. Mengkhususkan diri dalam penerjemahan tersumpah, sertifikasi Apostille Kemenkumham RI, dan legalisasi kedutaan asing untuk korporasi, kantor hukum, dan perwakilan internasional.
           </p>
           <div class="text-[11px] text-slate-400 space-y-1">
@@ -1498,7 +1540,7 @@
 
         <!-- Col 3: Layanan Utama -->
         <div>
-          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Layanan Utama</h4>
+          <h4 data-i18n="footer_services_title" class="text-white text-xs font-bold uppercase tracking-wider mb-4">Layanan Utama</h4>
           <ul class="space-y-2.5">
             <li><a href="#layanan" class="hover:text-white transition-colors">Penerjemah Tersumpah (25+ Bahasa)</a></li>
             <li><a href="#layanan" class="hover:text-white transition-colors">Apostille Kemenkumham RI</a></li>
@@ -1511,7 +1553,7 @@
 
         <!-- Col 4: Jaringan Kantor Cabang -->
         <div>
-          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Kantor Cabang Kami</h4>
+          <h4 data-i18n="footer_branches_title" class="text-white text-xs font-bold uppercase tracking-wider mb-4">Kantor Cabang Kami</h4>
           <ul class="space-y-2.5">
             <li>
               <strong class="text-slate-300 block">Cabang Jakarta:</strong>
@@ -1526,14 +1568,14 @@
               <span>Jl. Terusan Batubara Gg. V No.21, Blimbing, Malang</span>
             </li>
             <li class="pt-1">
-              <span class="text-emerald-400 font-semibold">Kantor Fisik Buka Setiap Hari (08.00 - 19.00 WITA)</span>
+              <span data-i18n="footer_hours_open" class="text-emerald-400 font-semibold">Kantor Fisik Buka Setiap Hari (08.00 - 19.00 WITA)</span>
             </li>
           </ul>
         </div>
 
         <!-- Col 5: Kontak & Dukungan Resmi -->
         <div>
-          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Kontak & Layanan</h4>
+          <h4 data-i18n="footer_contact_title" class="text-white text-xs font-bold uppercase tracking-wider mb-4">Kontak & Layanan</h4>
           <ul class="space-y-3">
             <li>
               <span class="block text-slate-400 text-[11px]">CS & WhatsApp Hotline:</span>
@@ -1586,8 +1628,8 @@
         <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-accent-400 rounded-full"></span>
       </div>
       <div class="hidden sm:block text-left pr-1">
-        <span class="block text-[10px] font-semibold text-emerald-100 uppercase tracking-wider">Corporate Hotline</span>
-        <span class="block text-xs font-bold">Chat WhatsApp B2B</span>
+        <span data-i18n="floating_wa_sub" class="block text-[10px] font-semibold text-emerald-100 uppercase tracking-wider">Corporate Hotline</span>
+        <span data-i18n="floating_wa_title" class="block text-xs font-bold">Chat WhatsApp B2B</span>
       </div>
     </a>
   </div>
@@ -1604,7 +1646,8 @@
     </a>
   </div>
 
-  <!-- Core JavaScript -->
+  <!-- Multilingual Dictionaries & Core JavaScript -->
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
